@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CORLAFC 2026 | Congreso Regional Contra Lavado de Activos, Fraude y Corrupción</title>
+    <meta
+      name="description"
+      content="CORLAFC 2026: XI Congreso Regional Contra Lavado de Activos, Fraude y Corrupción. Del 25 al 28 de junio en Lopesan Caoba Lagoon Resorts, República Dominicana."
+    />
+    <meta property="og:title" content="CORLAFC 2026" />
+    <meta
+      property="og:description"
+      content="Mapa del crimen financiero en LATAM 2026. Del 25 al 28 de junio en República Dominicana."
+    />
+    <meta property="og:image" content="assets/portada.jpg" />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --navy: #07172f;
+        --blue: #0a4f98;
+        --cyan: #21d9dd;
+        --gold: #f5b83b;
+        --orange: #f26522;
+        --ink: #142033;
+        --muted: #627086;
+        --line: #d8e4f0;
+        --paper: #f7fbff;
+        --white: #ffffff;
+        --shadow: 0 22px 60px rgba(7, 23, 47, 0.16);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(26px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes navDrop {
+        from {
+          opacity: 0;
+          transform: translateY(-18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes dataSweep {
+        from {
+          transform: translateX(-22%);
+        }
+        to {
+          transform: translateX(22%);
+        }
+      }
+
+      @keyframes softPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 rgba(33, 217, 221, 0);
+        }
+        50% {
+          box-shadow: 0 0 28px rgba(33, 217, 221, 0.28);
+        }
+      }
+
+      @keyframes tickerGlow {
+        0%,
+        100% {
+          border-color: rgba(255, 255, 255, 0.16);
+          transform: translateY(0);
+        }
+        50% {
+          border-color: rgba(33, 217, 221, 0.56);
+          transform: translateY(-2px);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .topbar {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 30;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(7, 23, 47, 0.82);
+        color: var(--white);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+        animation: navDrop 700ms ease both;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1180px, calc(100% - 32px));
+        min-height: 72px;
+        margin: 0 auto;
+        gap: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        width: min(230px, 34vw);
+        min-width: 0;
+        padding: 6px 9px;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+        text-decoration: none;
+        transition:
+          background 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .brand:hover {
+        background: var(--white);
+        box-shadow: 0 12px 30px rgba(33, 217, 221, 0.24);
+        transform: translateY(-2px);
+      }
+
+      .brand-logo {
+        width: 100%;
+        max-height: 40px;
+        object-fit: contain;
+        object-position: left center;
+        transition:
+          filter 220ms ease,
+          transform 220ms ease;
+      }
+
+      .brand:hover .brand-logo {
+        transform: scale(1.04);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .nav-links a {
+        position: relative;
+        text-decoration: none;
+      }
+
+      .nav-links a:not(.button)::after {
+        position: absolute;
+        right: 0;
+        bottom: -7px;
+        left: 0;
+        height: 2px;
+        content: "";
+        background: linear-gradient(90deg, var(--cyan), var(--gold));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 180ms ease;
+      }
+
+      .nav-links a:not(.button):hover {
+        color: var(--white);
+      }
+
+      .nav-links a:not(.button):hover::after {
+        transform: scaleX(1);
+      }
+
+      .countdown-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1180px, calc(100% - 32px));
+        min-height: 44px;
+        margin: -4px auto 10px;
+        gap: 18px;
+      }
+
+      .countdown-title {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .countdown {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .countdown-item {
+        display: grid;
+        min-width: 72px;
+        min-height: 44px;
+        place-items: center;
+        padding: 6px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.08);
+        animation: tickerGlow 3.6s ease-in-out infinite;
+      }
+
+      .countdown-item:nth-child(2) {
+        animation-delay: 180ms;
+      }
+
+      .countdown-item:nth-child(3) {
+        animation-delay: 360ms;
+      }
+
+      .countdown-item:nth-child(4) {
+        animation-delay: 540ms;
+      }
+
+      .countdown-item strong {
+        color: var(--gold);
+        font-size: 1.06rem;
+        line-height: 1;
+        font-weight: 950;
+      }
+
+      .countdown-item small {
+        color: rgba(255, 255, 255, 0.74);
+        font-size: 0.64rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .button {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background: var(--gold);
+        color: #07172f;
+        font-weight: 900;
+        text-decoration: none;
+        overflow: hidden;
+        box-shadow: 0 12px 24px rgba(245, 184, 59, 0.24);
+        transition:
+          border-color 180ms ease,
+          color 180ms ease,
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background 180ms ease;
+      }
+
+      .button::after {
+        position: absolute;
+        inset: 0 auto 0 -55%;
+        width: 44%;
+        content: "";
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
+        transform: skewX(-22deg);
+        transition: left 480ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-3px) scale(1.02);
+        background: #ffc954;
+        box-shadow: 0 16px 30px rgba(245, 184, 59, 0.34);
+      }
+
+      .button:hover::after {
+        left: 112%;
+      }
+
+      .button.secondary {
+        border-color: rgba(255, 255, 255, 0.34);
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        box-shadow: none;
+      }
+
+      .button.secondary:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        min-height: 88vh;
+        place-items: end start;
+        overflow: hidden;
+        isolation: isolate;
+        color: var(--white);
+        background:
+          linear-gradient(90deg, rgba(7, 23, 47, 0.96) 0%, rgba(7, 23, 47, 0.68) 44%, rgba(7, 23, 47, 0.18) 100%),
+          linear-gradient(0deg, rgba(7, 23, 47, 0.88), rgba(7, 23, 47, 0.02) 42%),
+          url("assets/portada.jpg") center / cover no-repeat;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        content: "";
+        background:
+          radial-gradient(circle at 20% 30%, rgba(33, 217, 221, 0.22), transparent 28%),
+          linear-gradient(105deg, transparent 0%, rgba(33, 217, 221, 0.08) 34%, transparent 58%);
+        mix-blend-mode: screen;
+        pointer-events: none;
+        animation: dataSweep 9s ease-in-out infinite alternate;
+      }
+
+      .hero::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        height: 8px;
+        content: "";
+        background: linear-gradient(90deg, var(--cyan), var(--gold), var(--orange));
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 166px 0 92px;
+      }
+
+      .hero .eyebrow,
+      .hero h1,
+      .hero-subtitle,
+      .hero-actions,
+      .event-strip {
+        animation: fadeUp 820ms ease both;
+      }
+
+      .hero h1 {
+        animation-delay: 100ms;
+      }
+
+      .hero-subtitle {
+        animation-delay: 190ms;
+      }
+
+      .hero-actions {
+        animation-delay: 280ms;
+      }
+
+      .event-strip {
+        animation-delay: 370ms;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 20px;
+        color: var(--cyan);
+        font-size: 0.88rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        display: inline-block;
+        width: 42px;
+        height: 3px;
+        content: "";
+        background: var(--gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 850px;
+        margin-bottom: 18px;
+        font-size: clamp(2.55rem, 6.2vw, 6.45rem);
+        line-height: 0.9;
+        font-weight: 950;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .hero-title-accent {
+        color: var(--gold);
+      }
+
+      .hero-subtitle {
+        max-width: 760px;
+        margin-bottom: 28px;
+        color: rgba(255, 255, 255, 0.91);
+        font-size: clamp(1.1rem, 2.1vw, 1.45rem);
+        font-weight: 700;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 34px;
+      }
+
+      .event-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: min(880px, 100%);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(7, 23, 47, 0.62);
+        backdrop-filter: blur(12px);
+      }
+
+      .event-fact {
+        min-height: 104px;
+        padding: 18px;
+        border-right: 1px solid rgba(255, 255, 255, 0.16);
+        transition:
+          background 220ms ease,
+          transform 220ms ease;
+      }
+
+      .event-fact:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-4px);
+      }
+
+      .event-fact:last-child {
+        border-right: 0;
+      }
+
+      .event-fact span {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--cyan);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .event-fact strong {
+        display: block;
+        color: var(--white);
+        font-size: 1.02rem;
+        line-height: 1.24;
+      }
+
+      section {
+        padding: 86px 0;
+        scroll-margin-top: 138px;
+      }
+
+      .section-inner {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section-heading {
+        max-width: 760px;
+        margin-bottom: 36px;
+      }
+
+      .section-heading .eyebrow {
+        margin-bottom: 12px;
+        color: var(--blue);
+      }
+
+      .section-heading h2 {
+        margin-bottom: 12px;
+        color: var(--navy);
+        font-size: clamp(2rem, 4vw, 3.8rem);
+        line-height: 0.98;
+        font-weight: 950;
+        letter-spacing: 0;
+      }
+
+      .section-heading p {
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .lead {
+        color: #263850;
+        font-size: clamp(1.15rem, 2.5vw, 1.48rem);
+        font-weight: 700;
+      }
+
+      .metric-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .metric {
+        min-height: 118px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        transition:
+          border-color 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .metric:hover {
+        border-color: rgba(33, 217, 221, 0.62);
+        box-shadow: 0 18px 40px rgba(10, 79, 152, 0.12);
+        transform: translateY(-7px);
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--blue);
+        font-size: 2.2rem;
+        line-height: 1;
+        font-weight: 950;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 800;
+      }
+
+      .media-panel {
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--navy);
+        box-shadow: var(--shadow);
+        transition:
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .media-panel:hover {
+        box-shadow: 0 26px 72px rgba(7, 23, 47, 0.24);
+        transform: translateY(-6px);
+      }
+
+      .media-panel img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        transition: transform 520ms ease;
+      }
+
+      .media-panel:hover img {
+        transform: scale(1.055);
+      }
+
+      .dark-band {
+        color: var(--white);
+        background:
+          linear-gradient(90deg, rgba(7, 23, 47, 0.98), rgba(10, 79, 152, 0.92)),
+          url("assets/fecha.jpg") center / cover no-repeat;
+      }
+
+      .dark-band .section-heading h2,
+      .dark-band .section-heading p {
+        color: var(--white);
+      }
+
+      .dark-band .section-heading .eyebrow {
+        color: var(--cyan);
+      }
+
+      .theme-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .theme-card {
+        min-height: 198px;
+        padding: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        transition:
+          border-color 220ms ease,
+          background 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .theme-card:hover {
+        border-color: rgba(245, 184, 59, 0.58);
+        background: rgba(255, 255, 255, 0.14);
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+        transform: translateY(-8px) scale(1.01);
+      }
+
+      .theme-card h3 {
+        margin-bottom: 10px;
+        color: var(--gold);
+        font-size: 1.05rem;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      .theme-card p {
+        margin-bottom: 10px;
+        color: rgba(255, 255, 255, 0.92);
+        font-weight: 800;
+      }
+
+      .theme-card .note {
+        margin-bottom: 0;
+        color: var(--cyan);
+        font-size: 0.98rem;
+      }
+
+      .venue {
+        background: var(--white);
+      }
+
+      .venue-layout {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 42px;
+        align-items: stretch;
+      }
+
+      .venue-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .venue-copy h2 {
+        margin-bottom: 16px;
+        color: var(--navy);
+        font-size: clamp(2rem, 4vw, 3.7rem);
+        line-height: 1;
+        font-weight: 950;
+      }
+
+      .venue-copy p {
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .venue-list {
+        display: grid;
+        gap: 12px;
+        margin: 26px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .venue-list li {
+        display: grid;
+        grid-template-columns: 16px 1fr;
+        gap: 12px;
+        align-items: start;
+        color: #2c3b50;
+        font-weight: 800;
+      }
+
+      .venue-list li::before {
+        width: 10px;
+        height: 10px;
+        margin-top: 8px;
+        border-radius: 50%;
+        content: "";
+        background: var(--orange);
+      }
+
+      .pricing {
+        background: linear-gradient(180deg, #eef7ff 0%, #ffffff 100%);
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .price-card {
+        min-height: 250px;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: 0 16px 42px rgba(10, 79, 152, 0.08);
+        transition:
+          border-color 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .price-card:hover {
+        border-color: rgba(10, 79, 152, 0.46);
+        box-shadow: 0 24px 52px rgba(10, 79, 152, 0.16);
+        transform: translateY(-8px);
+      }
+
+      .price-card.featured {
+        border-color: rgba(245, 184, 59, 0.72);
+        background: var(--navy);
+        color: var(--white);
+        animation: softPulse 4s ease-in-out infinite;
+      }
+
+      .price-card h3 {
+        margin-bottom: 18px;
+        color: inherit;
+        font-size: 1.12rem;
+        text-transform: uppercase;
+      }
+
+      .price {
+        display: block;
+        margin-bottom: 18px;
+        color: var(--blue);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1;
+        font-weight: 950;
+      }
+
+      .featured .price {
+        color: var(--gold);
+      }
+
+      .price-card p {
+        color: var(--muted);
+        font-weight: 750;
+      }
+
+      .featured p {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .save-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 18px;
+        padding: 22px 24px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, var(--orange), var(--gold));
+        color: var(--navy);
+      }
+
+      .save-banner strong {
+        font-size: clamp(1.3rem, 2.6vw, 2.15rem);
+        line-height: 1;
+        font-weight: 950;
+      }
+
+      .save-banner span {
+        max-width: 610px;
+        font-weight: 850;
+      }
+
+      .gallery {
+        background: var(--navy);
+        color: var(--white);
+      }
+
+      .gallery .section-heading h2,
+      .gallery .section-heading p {
+        color: var(--white);
+      }
+
+      .gallery .section-heading .eyebrow {
+        color: var(--cyan);
+      }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .image-grid figure {
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        transition:
+          border-color 220ms ease,
+          transform 220ms ease;
+      }
+
+      .image-grid figure:hover {
+        border-color: rgba(33, 217, 221, 0.58);
+        transform: translateY(-6px);
+      }
+
+      .image-grid img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        transition: transform 520ms ease;
+      }
+
+      .image-grid figure:hover img {
+        transform: scale(1.06);
+      }
+
+      .image-grid figcaption {
+        padding: 12px 14px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.88rem;
+        font-weight: 800;
+      }
+
+      .contact {
+        color: var(--white);
+        background:
+          linear-gradient(90deg, rgba(7, 23, 47, 0.98), rgba(7, 23, 47, 0.78)),
+          url("assets/hotel.jpg") center / cover no-repeat;
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .contact h2 {
+        margin-bottom: 16px;
+        font-size: clamp(2.15rem, 4vw, 4.5rem);
+        line-height: 0.96;
+        font-weight: 950;
+      }
+
+      .contact p {
+        max-width: 640px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 1.08rem;
+      }
+
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .contact-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .contact-list a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 88px;
+        padding: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.09);
+        color: var(--white);
+        font-weight: 850;
+        text-decoration: none;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        transition:
+          border-color 220ms ease,
+          background 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .contact-list a::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+        opacity: 0;
+        transform: translateX(-70%);
+        transition:
+          opacity 220ms ease,
+          transform 520ms ease;
+      }
+
+      .contact-list a:hover {
+        border-color: rgba(33, 217, 221, 0.52);
+        background: rgba(255, 255, 255, 0.14);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
+        transform: translateY(-6px) scale(1.01);
+      }
+
+      .contact-list a:hover::before {
+        opacity: 1;
+        transform: translateX(70%);
+      }
+
+      .contact-icon,
+      .contact-copy,
+      .contact-arrow {
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-icon {
+        display: grid;
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--white);
+        background: #25d366;
+        box-shadow: 0 12px 24px rgba(37, 211, 102, 0.28);
+        transition:
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .contact-icon svg {
+        width: 25px;
+        height: 25px;
+        fill: currentColor;
+      }
+
+      .contact-list a:hover .contact-icon {
+        box-shadow: 0 14px 34px rgba(37, 211, 102, 0.42);
+        transform: rotate(-6deg) scale(1.08);
+      }
+
+      .contact-list a.whatsapp {
+        justify-content: center;
+        min-height: 86px;
+        padding: 18px;
+      }
+
+      .contact-list a.whatsapp .contact-icon {
+        flex-basis: 64px;
+        width: 64px;
+        height: 64px;
+        border: 2px solid rgba(255, 255, 255, 0.22);
+        background: linear-gradient(145deg, #31e879, #13b955);
+      }
+
+      .contact-list a.whatsapp .contact-icon svg {
+        width: 34px;
+        height: 34px;
+      }
+
+      .contact-list a.mail .contact-icon {
+        background: var(--orange);
+        box-shadow: 0 12px 24px rgba(242, 101, 34, 0.3);
+      }
+
+      .contact-list a.web .contact-icon {
+        background: var(--blue);
+        box-shadow: 0 12px 24px rgba(10, 79, 152, 0.34);
+      }
+
+      .contact-copy {
+        display: grid;
+        min-width: 0;
+        gap: 2px;
+      }
+
+      .contact-label {
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .contact-value {
+        color: var(--white);
+        font-size: 1.02rem;
+        font-weight: 950;
+        overflow-wrap: anywhere;
+      }
+
+      .contact-arrow {
+        margin-left: auto;
+        color: var(--gold);
+        font-size: 0.84rem;
+        font-weight: 950;
+        white-space: nowrap;
+        transition: transform 220ms ease;
+      }
+
+      .contact-list a:hover .contact-arrow {
+        transform: translateX(3px);
+      }
+
+      footer {
+        padding: 24px 0;
+        background: #050d1b;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.9rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .footer-inner a {
+        color: var(--gold);
+        font-weight: 800;
+        text-decoration: none;
+        transition:
+          color 180ms ease,
+          transform 180ms ease;
+      }
+
+      .footer-inner a:hover {
+        color: var(--cyan);
+        transform: translateY(-2px);
+      }
+
+      .footer-credit {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .instagram-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .instagram-link svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+      }
+
+      body.can-animate .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(28px) scale(0.985);
+        transition:
+          opacity 780ms ease,
+          transform 780ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      body.can-animate .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      @media (max-width: 960px) {
+        .nav {
+          min-height: 64px;
+        }
+
+        .brand {
+          width: min(204px, 46vw);
+        }
+
+        .nav-links a:not(.button) {
+          display: none;
+        }
+
+        .countdown-bar {
+          align-items: flex-start;
+          flex-direction: column;
+          min-height: auto;
+          margin-top: -2px;
+          padding-bottom: 10px;
+          gap: 8px;
+        }
+
+        .countdown {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .countdown-item {
+          min-width: 0;
+          width: 100%;
+        }
+
+        .hero {
+          min-height: 84vh;
+          background:
+            linear-gradient(90deg, rgba(7, 23, 47, 0.98) 0%, rgba(7, 23, 47, 0.8) 54%, rgba(7, 23, 47, 0.34) 100%),
+            linear-gradient(0deg, rgba(7, 23, 47, 0.92), rgba(7, 23, 47, 0.1) 48%),
+            url("assets/portada.jpg") center / cover no-repeat;
+        }
+
+        .event-strip,
+        .intro-grid,
+        .venue-layout,
+        .contact-layout,
+        .contact-list {
+          grid-template-columns: 1fr;
+        }
+
+        .event-strip {
+          width: 100%;
+        }
+
+        .event-fact {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .event-fact:last-child {
+          border-bottom: 0;
+        }
+
+        .metric-row,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .theme-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .image-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+        .nav {
+          width: min(100% - 22px, 1180px);
+        }
+
+        .brand {
+          width: min(168px, 48vw);
+        }
+
+        .brand-logo {
+          max-height: 42px;
+        }
+
+        .countdown-title {
+          font-size: 0.66rem;
+          white-space: normal;
+        }
+
+        .countdown {
+          gap: 6px;
+        }
+
+        .countdown-item {
+          min-height: 42px;
+          padding: 6px 4px;
+        }
+
+        .countdown-item strong {
+          font-size: 0.94rem;
+        }
+
+        .countdown-item small {
+          font-size: 0.56rem;
+        }
+
+        .nav-links .button {
+          min-height: 40px;
+          padding: 0 12px;
+          font-size: 0.86rem;
+        }
+
+        .hero-inner,
+        .section-inner,
+        .footer-inner {
+          width: min(100% - 22px, 1180px);
+        }
+
+        .hero-inner {
+          padding: 168px 0 58px;
+        }
+
+        h1 {
+          font-size: clamp(2.35rem, 14vw, 4.2rem);
+        }
+
+        section {
+          padding: 62px 0;
+          scroll-margin-top: 166px;
+        }
+
+        .hero-actions,
+        .contact-actions,
+        .save-banner {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .metric,
+        .theme-card,
+        .price-card {
+          padding: 20px;
+        }
+
+        .contact-list a {
+          min-height: 78px;
+          padding: 14px;
+        }
+
+        .contact-list a.whatsapp {
+          min-height: 74px;
+        }
+
+        .contact-icon {
+          flex-basis: 44px;
+          width: 44px;
+          height: 44px;
+        }
+
+        .contact-list a.whatsapp .contact-icon {
+          flex-basis: 52px;
+          width: 52px;
+          height: 52px;
+        }
+
+        .contact-arrow {
+          display: none;
+        }
+
+        .image-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "CORLAFC 2026",
+        "alternateName": "XI Congreso Regional Contra Lavado de Activos, Fraude y Corrupción",
+        "description": "Mapa del crimen financiero en LATAM 2026.",
+        "startDate": "2026-06-25",
+        "endDate": "2026-06-28",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": ["assets/portada.jpg"],
+        "location": {
+          "@type": "Place",
+          "name": "Lopesan Caoba Lagoon Resorts",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "DO",
+            "addressLocality": "Punta Cana"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "CESI Internacional",
+          "email": "info@cesinternacional.com",
+          "url": "https://www.cesinternacional.com"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "url": "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAY0EgtFUMUs2Wk84UkxFUUdSOFZTR081SU84SEpYTy4u",
+          "priceCurrency": "USD",
+          "lowPrice": "795",
+          "highPrice": "1995",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="CORLAFC 2026">
+          <img class="brand-logo" src="assets/corlafc-logo.png" alt="Logo CORLAFC" />
+        </a>
+        <div class="nav-links">
+          <a href="#ejes">Ejes</a>
+          <a href="#sede">Sede</a>
+          <a href="#inversion">Inversión</a>
+          <a href="#contacto">Contacto</a>
+          <a
+            class="button"
+            href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAY0EgtFUMUs2Wk84UkxFUUdSOFZTR081SU84SEpYTy4u"
+            target="_blank"
+            rel="noopener"
+            >Inscríbete</a
+          >
+        </div>
+      </nav>
+      <div class="countdown-bar" aria-label="Cuenta regresiva para CORLAFC 2026">
+        <span class="countdown-title" id="countdown-title">Faltan para CORLAFC 2026</span>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <span class="countdown-item">
+            <strong data-countdown-days>00</strong>
+            <small>Días</small>
+          </span>
+          <span class="countdown-item">
+            <strong data-countdown-hours>00</strong>
+            <small>Horas</small>
+          </span>
+          <span class="countdown-item">
+            <strong data-countdown-minutes>00</strong>
+            <small>Min</small>
+          </span>
+          <span class="countdown-item">
+            <strong data-countdown-seconds>00</strong>
+            <small>Seg</small>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-label="Presentación CORLAFC 2026">
+        <div class="hero-inner">
+          <p class="eyebrow">XI Congreso Regional</p>
+          <h1>
+            <span class="hero-title-accent">CORLAFC</span> 2026
+          </h1>
+          <p class="hero-subtitle">
+            Congreso Regional Contra Lavado de Activos, Fraude y Corrupción:
+            “Mapa del crimen financiero en LATAM 2026”.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button"
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAY0EgtFUMUs2Wk84UkxFUUdSOFZTR081SU84SEpYTy4u"
+              target="_blank"
+              rel="noopener"
+              >Completar inscripción</a
+            >
+            <a class="button secondary" href="#ejes">Ver programa</a>
+          </div>
+          <div class="event-strip" aria-label="Datos del evento">
+            <div class="event-fact">
+              <span>Fecha</span>
+              <strong>25 al 28 de junio de 2026</strong>
+            </div>
+            <div class="event-fact">
+              <span>Sede</span>
+              <strong>Lopesan Caoba Lagoon Resorts</strong>
+            </div>
+            <div class="event-fact">
+              <span>País</span>
+              <strong>República Dominicana</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="resumen-title">
+        <div class="section-inner intro-grid">
+          <div>
+            <div class="section-heading">
+              <p class="eyebrow">El encuentro</p>
+              <h2 id="resumen-title">Una agenda regional para anticipar el riesgo financiero</h2>
+            </div>
+            <p class="lead">
+              CORLAFC 2026 reúne a profesionales de cumplimiento, finanzas, seguros,
+              auditoría, investigación y gestión de riesgos para analizar cómo evoluciona el
+              lavado de activos en entornos digitales, globales y cada vez más automatizados.
+            </p>
+            <div class="metric-row">
+              <div class="metric">
+                <strong>4</strong>
+                <span>Días de congreso y networking</span>
+              </div>
+              <div class="metric">
+                <strong>7</strong>
+                <span>Ejes temáticos especializados</span>
+              </div>
+              <div class="metric">
+                <strong>FIBA</strong>
+                <span>Créditos del programa</span>
+              </div>
+            </div>
+          </div>
+          <div class="media-panel">
+            <img
+              src="assets/fecha.jpg"
+              alt="Arte del evento CORLAFC 2026 con fecha 25 al 28 de junio y sede en República Dominicana"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="dark-band" id="ejes" aria-labelledby="ejes-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Programa preliminar</p>
+            <h2 id="ejes-title">Mapa del crimen financiero en LATAM 2026</h2>
+            <p>
+              Los ejes temáticos abordan los nuevos patrones del delito financiero, la
+              tecnología aplicada al análisis y las responsabilidades del sector privado.
+            </p>
+          </div>
+          <div class="theme-grid">
+            <article class="theme-card">
+              <h3>Crimen financiero 4.0</h3>
+              <p>La nueva arquitectura del delito.</p>
+              <p class="note">El enemigo ya no es visible, pero es más sofisticado que nunca.</p>
+            </article>
+            <article class="theme-card">
+              <h3>Inteligencia artificial</h3>
+              <p>Del análisis a la acción.</p>
+              <p class="note">La tecnología ya no apoya, decide.</p>
+            </article>
+            <article class="theme-card">
+              <h3>Cibercrimen y lavado digital</h3>
+              <p>La nueva frontera.</p>
+              <p class="note">El crimen ya es 100% digital y global.</p>
+            </article>
+            <article class="theme-card">
+              <h3>Criptoactivos y economía oculta</h3>
+              <p>DeFi, mixers y anonimización.</p>
+              <p class="note">El dinero ya no necesita bancos para esconderse.</p>
+            </article>
+            <article class="theme-card">
+              <h3>Corrupción y soborno sistémico</h3>
+              <p>El riesgo interno en la organización.</p>
+              <p class="note">El mayor riesgo sigue estando dentro.</p>
+            </article>
+            <article class="theme-card">
+              <h3>Compliance 2026</h3>
+              <p>El fin del modelo tradicional.</p>
+              <p class="note">Cumplir ya no es suficiente: hay que anticiparse.</p>
+            </article>
+            <article class="theme-card">
+              <h3>Sector financiero y seguros</h3>
+              <p>Nuevos riesgos, nuevas responsabilidades.</p>
+              <p class="note">Los sectores que protegen también son objetivos.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="venue" id="sede" aria-labelledby="sede-title">
+        <div class="section-inner venue-layout">
+          <div class="venue-copy">
+            <p class="eyebrow">Sede del evento</p>
+            <h2 id="sede-title">Lopesan Caoba Lagoon Resorts</h2>
+            <p>
+              El congreso se celebrará en República Dominicana, en un entorno diseñado para
+              sesiones académicas, encuentros profesionales y una experiencia de reserva
+              integrada.
+            </p>
+            <ul class="venue-list">
+              <li>Ubicación: Bávaro, Punta Cana, República Dominicana.</li>
+              <li>Reservas disponibles por teléfono o correo institucional.</li>
+              <li>Ahorro de US$100 al pagar antes del 30 de mayo de 2026.</li>
+            </ul>
+          </div>
+          <div class="media-panel">
+            <img src="assets/hotel.jpg" alt="Lopesan Caoba Lagoon Resorts, sede de CORLAFC 2026" />
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="inversion" aria-labelledby="inversion-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Inversión</p>
+            <h2 id="inversion-title">Elige tu modalidad de participación</h2>
+            <p>
+              Tarifas publicadas para reservas del programa preliminar CORLAFC 2026.
+            </p>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card featured">
+              <h3>Suite individual</h3>
+              <span class="price">US$1,995</span>
+              <p>Participación individual con alojamiento en suite.</p>
+            </article>
+            <article class="price-card">
+              <h3>Suite doble compartida</h3>
+              <span class="price">US$1,795</span>
+              <p>Tarifa para habitación compartida durante el evento.</p>
+            </article>
+            <article class="price-card">
+              <h3>Acompañantes</h3>
+              <span class="price">US$795</span>
+              <p>Opción disponible para acompañantes del participante.</p>
+            </article>
+          </div>
+          <div class="save-banner" aria-label="Descuento por pago anticipado">
+            <strong>US$100 de ahorro</strong>
+            <span>Disponible al pagar antes del 30 de mayo de 2026.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery" aria-labelledby="galeria-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Material del evento</p>
+            <h2 id="galeria-title">Identidad visual CORLAFC</h2>
+            <p>
+              Piezas base del congreso para reforzar fecha, sede, programa e inversión.
+            </p>
+          </div>
+          <div class="image-grid">
+            <figure>
+              <img src="assets/portada.jpg" alt="Portada oficial de CORLAFC 2026" />
+              <figcaption>Portada oficial</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/ejes.jpg" alt="Ejes temáticos de CORLAFC 2026" />
+              <figcaption>Ejes temáticos</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/inversion.jpg" alt="Tarifas de inversión de CORLAFC 2026" />
+              <figcaption>Reservas e inversión</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/hotel.jpg" alt="Sede hotelera del evento CORLAFC 2026" />
+              <figcaption>Sede y reservas</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contacto" aria-labelledby="contacto-title">
+        <div class="section-inner contact-layout">
+          <div>
+            <p class="eyebrow">Inscripciones</p>
+            <h2 id="contacto-title">Reserva tu participación</h2>
+            <p>
+              Completa el formulario oficial de inscripción o contacta al equipo de CESI
+              Internacional para coordinar reservas, inversión y detalles del programa.
+            </p>
+            <div class="contact-actions">
+              <a
+                class="button"
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAY0EgtFUMUs2Wk84UkxFUUdSOFZTR081SU84SEpYTy4u"
+                target="_blank"
+                rel="noopener"
+                >Formulario de inscripción</a
+              >
+              <a class="button secondary" href="mailto:info@cesinternacional.com">Enviar correo</a>
+            </div>
+          </div>
+          <ul class="contact-list">
+            <li>
+              <a
+                class="whatsapp"
+                href="https://wa.me/18097926699?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20CORLAFC%202026."
+                target="_blank"
+                rel="noopener"
+                aria-label="Escribir por WhatsApp al 809 792 6699"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20.52 3.49A11.78 11.78 0 0 0 12.07 0C5.52 0 .19 5.33.18 11.88c0 2.1.55 4.15 1.6 5.95L.08 24l6.32-1.65a11.9 11.9 0 0 0 5.67 1.44h.01c6.55 0 11.88-5.33 11.89-11.88a11.82 11.82 0 0 0-3.45-8.42Zm-8.44 18.3h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.75.98 1-3.65-.24-.38a9.85 9.85 0 0 1-1.5-5.27c0-5.45 4.44-9.89 9.9-9.89a9.83 9.83 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 7c-.01 5.46-4.45 9.9-9.89 9.9Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="whatsapp"
+                href="https://wa.me/18097563753?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20CORLAFC%202026."
+                target="_blank"
+                rel="noopener"
+                aria-label="Escribir por WhatsApp al 809 756 3753"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20.52 3.49A11.78 11.78 0 0 0 12.07 0C5.52 0 .19 5.33.18 11.88c0 2.1.55 4.15 1.6 5.95L.08 24l6.32-1.65a11.9 11.9 0 0 0 5.67 1.44h.01c6.55 0 11.88-5.33 11.89-11.88a11.82 11.82 0 0 0-3.45-8.42Zm-8.44 18.3h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.75.98 1-3.65-.24-.38a9.85 9.85 0 0 1-1.5-5.27c0-5.45 4.44-9.89 9.9-9.89a9.83 9.83 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 7c-.01 5.46-4.45 9.9-9.89 9.9Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="mail"
+                href="mailto:info@cesinternacional.com?subject=Informaci%C3%B3n%20CORLAFC%202026"
+                aria-label="Enviar correo a info@cesinternacional.com"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M3.8 5h16.4c1 0 1.8.8 1.8 1.8v10.4c0 1-.8 1.8-1.8 1.8H3.8c-1 0-1.8-.8-1.8-1.8V6.8C2 5.8 2.8 5 3.8 5Zm.4 2 7.8 5.35L19.8 7H4.2Zm15.8 9.7V9.28l-7.46 5.11a1 1 0 0 1-1.08 0L4 9.28v7.42h16Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-copy">
+                  <span class="contact-label">Correo</span>
+                  <strong class="contact-value">info@cesinternacional.com</strong>
+                </span>
+                <span class="contact-arrow">Enviar</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="web"
+                href="https://www.corlafc.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Visitar www.corlafc.com"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.93 6h-3.18a15.9 15.9 0 0 0-1.2-3.13A8.04 8.04 0 0 1 18.93 8ZM12 4.04c.6.87 1.2 2.2 1.6 3.96h-3.2c.4-1.76 1-3.09 1.6-3.96ZM4.26 14a8.63 8.63 0 0 1 0-4h3.59a17.56 17.56 0 0 0 0 4H4.26Zm.81 2h3.18c.3 1.17.72 2.24 1.2 3.13A8.04 8.04 0 0 1 5.07 16Zm3.18-8H5.07a8.04 8.04 0 0 1 4.38-3.13A15.9 15.9 0 0 0 8.25 8ZM12 19.96c-.6-.87-1.2-2.2-1.6-3.96h3.2c-.4 1.76-1 3.09-1.6 3.96ZM14.03 14H9.97a15.6 15.6 0 0 1 0-4h4.06a15.6 15.6 0 0 1 0 4Zm.52 5.13c.48-.89.9-1.96 1.2-3.13h3.18a8.04 8.04 0 0 1-4.38 3.13ZM16.15 14a17.56 17.56 0 0 0 0-4h3.59a8.63 8.63 0 0 1 0 4h-3.59Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-copy">
+                  <span class="contact-label">Web</span>
+                  <strong class="contact-value">www.corlafc.com</strong>
+                </span>
+                <span class="contact-arrow">Abrir</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>CORLAFC 2026 · CESI Internacional · Todos los derechos reservados</span>
+        <span class="footer-credit">
+          <span>Diseño web por</span>
+          <a
+            class="instagram-link"
+            href="https://www.instagram.com/rogerwebhub/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram de RogerWebHub"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7.7 2h8.6A5.7 5.7 0 0 1 22 7.7v8.6a5.7 5.7 0 0 1-5.7 5.7H7.7A5.7 5.7 0 0 1 2 16.3V7.7A5.7 5.7 0 0 1 7.7 2Zm0 2A3.7 3.7 0 0 0 4 7.7v8.6A3.7 3.7 0 0 0 7.7 20h8.6a3.7 3.7 0 0 0 3.7-3.7V7.7A3.7 3.7 0 0 0 16.3 4H7.7Zm4.3 3.2A4.8 4.8 0 1 1 12 16.8a4.8 4.8 0 0 1 0-9.6Zm0 2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Zm5.05-2.05a1.15 1.15 0 1 1-1.15 1.15 1.15 1.15 0 0 1 1.15-1.15Z"
+              />
+            </svg>
+            RogerWebHub
+          </a>
+        </span>
+        <a href="https://www.cesinternacional.com" target="_blank" rel="noopener"
+          >cesinternacional.com</a
+        >
+      </div>
+    </footer>
+    <script>
+      const eventDate = new Date("2026-06-25T00:00:00-04:00").getTime();
+      const countdownTitle = document.querySelector("#countdown-title");
+      const countdownParts = {
+        days: document.querySelector("[data-countdown-days]"),
+        hours: document.querySelector("[data-countdown-hours]"),
+        minutes: document.querySelector("[data-countdown-minutes]"),
+        seconds: document.querySelector("[data-countdown-seconds]"),
+      };
+
+      function padTime(value) {
+        return String(value).padStart(2, "0");
+      }
+
+      function updateCountdown() {
+        const now = Date.now();
+        const distance = eventDate - now;
+
+        if (distance <= 0) {
+          countdownTitle.textContent = "CORLAFC 2026 ya comenzó";
+          Object.values(countdownParts).forEach((part) => {
+            part.textContent = "00";
+          });
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        countdownParts.days.textContent = padTime(days);
+        countdownParts.hours.textContent = padTime(hours);
+        countdownParts.minutes.textContent = padTime(minutes);
+        countdownParts.seconds.textContent = padTime(seconds);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      document.body.classList.add("can-animate");
+      const revealTargets = document.querySelectorAll(
+        ".section-heading, .lead, .metric, .media-panel, .theme-card, .venue-list li, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
+      );
+
+      revealTargets.forEach((target, index) => {
+        target.classList.add("animate-on-scroll");
+        target.style.transitionDelay = `${Math.min(index % 7, 6) * 70}ms`;
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16 }
+      );
+
+      revealTargets.forEach((target) => revealObserver.observe(target));
+    </script>
+  </body>
+</html>
