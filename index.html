@@ -6,7 +6,7 @@
     <title>CORLAFC 2026 | Congreso Regional Contra Lavado de Activos, Fraude y Corrupción</title>
     <meta
       name="description"
-      content="CORLAFC 2026: XI Congreso Regional Contra Lavado de Activos, Fraude y Corrupción. Del 25 al 28 de junio en Lopesan Caoba Lagoon Resorts, República Dominicana."
+      content="CORLAFC 2026: XI Congreso Regional Contra Lavado de Activos, Fraude y Corrupción. Del 25 al 28 de junio en Dreams Cap Cana Resort & Spa, República Dominicana."
     />
     <meta property="og:title" content="CORLAFC 2026" />
     <meta
@@ -613,7 +613,7 @@
         color: var(--white);
         background:
           linear-gradient(90deg, rgba(7, 23, 47, 0.98), rgba(10, 79, 152, 0.92)),
-          url("assets/fecha.jpg") center / cover no-repeat;
+          url("assets/dreams/lobby-detail.jpeg") center / cover no-repeat;
       }
 
       .dark-band .section-heading h2,
@@ -726,6 +726,121 @@
         border-radius: 50%;
         content: "";
         background: var(--orange);
+      }
+
+      .dreams-logo-card {
+        display: inline-flex;
+        align-items: center;
+        width: min(260px, 100%);
+        margin-bottom: 24px;
+        padding: 18px 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: 0 14px 34px rgba(10, 79, 152, 0.1);
+      }
+
+      .dreams-logo-card img {
+        width: 100%;
+        max-height: 88px;
+        object-fit: contain;
+      }
+
+      .venue-stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .venue-stat {
+        min-height: 104px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f7fbff;
+        transition:
+          border-color 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .venue-stat:hover {
+        border-color: rgba(33, 217, 221, 0.62);
+        box-shadow: 0 18px 42px rgba(10, 79, 152, 0.12);
+        transform: translateY(-6px);
+      }
+
+      .venue-stat strong {
+        display: block;
+        color: var(--blue);
+        font-size: 1.55rem;
+        line-height: 1;
+        font-weight: 950;
+      }
+
+      .venue-stat span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 850;
+      }
+
+      .luxury {
+        color: var(--white);
+        background:
+          linear-gradient(90deg, rgba(7, 23, 47, 0.96), rgba(10, 79, 152, 0.76)),
+          url("assets/dreams/resort-aerial-wide.jpeg") center / cover no-repeat;
+      }
+
+      .luxury .section-heading h2,
+      .luxury .section-heading p {
+        color: var(--white);
+      }
+
+      .luxury .section-heading .eyebrow {
+        color: var(--cyan);
+      }
+
+      .luxury-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .luxury-card {
+        min-height: 184px;
+        padding: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        transition:
+          border-color 220ms ease,
+          background 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .luxury-card:hover {
+        border-color: rgba(245, 184, 59, 0.62);
+        background: rgba(255, 255, 255, 0.16);
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+        transform: translateY(-8px);
+      }
+
+      .luxury-card h3 {
+        margin-bottom: 10px;
+        color: var(--gold);
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+
+      .luxury-card p {
+        margin-bottom: 0;
+        color: rgba(255, 255, 255, 0.88);
+        font-weight: 800;
       }
 
       .pricing {
@@ -874,7 +989,7 @@
         color: var(--white);
         background:
           linear-gradient(90deg, rgba(7, 23, 47, 0.98), rgba(7, 23, 47, 0.78)),
-          url("assets/hotel.jpg") center / cover no-repeat;
+          url("assets/dreams/resort-sunset.jpeg") center / cover no-repeat;
       }
 
       .contact-layout {
@@ -1180,7 +1295,9 @@
         }
 
         .metric-row,
-        .pricing-grid {
+        .pricing-grid,
+        .venue-stat-grid,
+        .luxury-grid {
           grid-template-columns: 1fr;
         }
 
@@ -1327,14 +1444,14 @@
         "endDate": "2026-06-28",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",
-        "image": ["assets/portada.jpg"],
+        "image": ["assets/portada.jpg", "assets/dreams/resort-aerial-wide.jpeg"],
         "location": {
           "@type": "Place",
-          "name": "Lopesan Caoba Lagoon Resorts",
+          "name": "Dreams Cap Cana Resort & Spa",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "DO",
-            "addressLocality": "Punta Cana"
+            "addressLocality": "Cap Cana, Punta Cana"
           }
         },
         "organizer": {
@@ -1425,7 +1542,7 @@
             </div>
             <div class="event-fact">
               <span>Sede</span>
-              <strong>Lopesan Caoba Lagoon Resorts</strong>
+              <strong>Dreams Cap Cana Resort & Spa</strong>
             </div>
             <div class="event-fact">
               <span>País</span>
@@ -1464,8 +1581,8 @@
           </div>
           <div class="media-panel">
             <img
-              src="assets/fecha.jpg"
-              alt="Arte del evento CORLAFC 2026 con fecha 25 al 28 de junio y sede en República Dominicana"
+              src="assets/dreams/resort-aerial-wide.jpeg"
+              alt="Vista aérea de Dreams Cap Cana Resort & Spa, sede de CORLAFC 2026"
             />
           </div>
         </div>
@@ -1524,21 +1641,78 @@
       <section class="venue" id="sede" aria-labelledby="sede-title">
         <div class="section-inner venue-layout">
           <div class="venue-copy">
+            <div class="dreams-logo-card">
+              <img src="assets/dreams/dreams-logo.png" alt="Dreams Cap Cana Resort & Spa" />
+            </div>
             <p class="eyebrow">Sede del evento</p>
-            <h2 id="sede-title">Lopesan Caoba Lagoon Resorts</h2>
+            <h2 id="sede-title">Dreams Cap Cana Resort & Spa</h2>
             <p>
-              El congreso se celebrará en República Dominicana, en un entorno diseñado para
-              sesiones académicas, encuentros profesionales y una experiencia de reserva
-              integrada.
+              El congreso se celebrará en las costas de la comunidad privada de Cap Cana,
+              en un resort de lujo todo incluido para parejas y familias, a solo 15 minutos
+              del Aeropuerto Internacional de Punta Cana.
             </p>
             <ul class="venue-list">
-              <li>Ubicación: Bávaro, Punta Cana, República Dominicana.</li>
-              <li>Reservas disponibles por teléfono o correo institucional.</li>
-              <li>Ahorro de US$100 al pagar antes del 30 de mayo de 2026.</li>
+              <li>Ubicación: Cap Cana, Punta Cana, República Dominicana.</li>
+              <li>Experiencia Unlimited-Luxury® con restaurantes gourmet y bebidas premium.</li>
+              <li>Playa Juanillo, piscinas, spa, actividades diurnas y entretenimiento nocturno.</li>
             </ul>
+            <div class="venue-stat-grid" aria-label="Datos destacados de Dreams Cap Cana">
+              <div class="venue-stat">
+                <strong>519</strong>
+                <span>Habitaciones y suites elegantemente decoradas.</span>
+              </div>
+              <div class="venue-stat">
+                <strong>15 min</strong>
+                <span>Desde el Aeropuerto Internacional de Punta Cana.</span>
+              </div>
+              <div class="venue-stat">
+                <strong>24 h</strong>
+                <span>Servicio a la habitación y minibar renovado diariamente.</span>
+              </div>
+            </div>
           </div>
           <div class="media-panel">
-            <img src="assets/hotel.jpg" alt="Lopesan Caoba Lagoon Resorts, sede de CORLAFC 2026" />
+            <img src="assets/dreams/pool-main.jpeg" alt="Piscinas y áreas del Dreams Cap Cana Resort & Spa" />
+          </div>
+        </div>
+      </section>
+
+      <section class="luxury" aria-labelledby="luxury-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Unlimited-Luxury®</p>
+            <h2 id="luxury-title">Su escapada en Dreams Cap Cana</h2>
+            <p>
+              Dreams Resorts & Spas eleva el todo incluido con servicio de primera categoría,
+              gastronomía gourmet, licores premium y experiencias diseñadas para asistentes de
+              todas las edades.
+            </p>
+          </div>
+          <div class="luxury-grid">
+            <article class="luxury-card">
+              <h3>Gastronomía gourmet</h3>
+              <p>Restaurantes con cocina italiana, carnes, sabores internacionales y ambientes elegantes.</p>
+            </article>
+            <article class="luxury-card">
+              <h3>Lujo todo incluido</h3>
+              <p>Minibar renovado diariamente, bebidas premium y servicio de habitaciones 24 horas.</p>
+            </article>
+            <article class="luxury-card">
+              <h3>Playa y piscinas</h3>
+              <p>Relájese en Playa Juanillo o disfrute las espectaculares piscinas del resort.</p>
+            </article>
+            <article class="luxury-card">
+              <h3>Familias y parejas</h3>
+              <p>Escenario ideal para vacaciones familiares, bodas, escapadas románticas y networking.</p>
+            </article>
+            <article class="luxury-card">
+              <h3>Actividades</h3>
+              <p>Opciones diurnas y nocturnas para descansar, conectar y crear recuerdos duraderos.</p>
+            </article>
+            <article class="luxury-card">
+              <h3>Spa y bienestar</h3>
+              <p>Tratamientos relajantes y espacios pensados para dejarse mimar después del congreso.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -1579,28 +1753,45 @@
       <section class="gallery" aria-labelledby="galeria-title">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="eyebrow">Material del evento</p>
-            <h2 id="galeria-title">Identidad visual CORLAFC</h2>
+            <p class="eyebrow">Dreams Cap Cana</p>
+            <h2 id="galeria-title">Sede, suites y gastronomía</h2>
             <p>
-              Piezas base del congreso para reforzar fecha, sede, programa e inversión.
+              Una mirada a la experiencia del resort: piscinas, playa, restaurantes gourmet,
+              habitaciones y espacios ideales para descansar después del congreso.
             </p>
           </div>
           <div class="image-grid">
             <figure>
-              <img src="assets/portada.jpg" alt="Portada oficial de CORLAFC 2026" />
-              <figcaption>Portada oficial</figcaption>
+              <img src="assets/dreams/resort-aerial-wide.jpeg" alt="Vista aérea de Dreams Cap Cana Resort & Spa" />
+              <figcaption>Resort en Cap Cana</figcaption>
             </figure>
             <figure>
-              <img src="assets/ejes.jpg" alt="Ejes temáticos de CORLAFC 2026" />
-              <figcaption>Ejes temáticos</figcaption>
+              <img src="assets/dreams/pool-main.jpeg" alt="Piscina principal de Dreams Cap Cana" />
+              <figcaption>Piscinas del resort</figcaption>
             </figure>
             <figure>
-              <img src="assets/inversion.jpg" alt="Tarifas de inversión de CORLAFC 2026" />
-              <figcaption>Reservas e inversión</figcaption>
+              <img src="assets/dreams/lobby.jpeg" alt="Lobby de Dreams Cap Cana Resort & Spa" />
+              <figcaption>Lobby y recepción</figcaption>
             </figure>
             <figure>
-              <img src="assets/hotel.jpg" alt="Sede hotelera del evento CORLAFC 2026" />
-              <figcaption>Sede y reservas</figcaption>
+              <img src="assets/dreams/suite-king.jpeg" alt="Suite king en Dreams Cap Cana" />
+              <figcaption>Suites equipadas</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/dreams/room-double.jpeg" alt="Habitación doble en Dreams Cap Cana" />
+              <figcaption>Habitaciones familiares</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/dreams/restaurant-maravento.webp" alt="Restaurante Maravento en Dreams Cap Cana" />
+              <figcaption>Restaurantes gourmet</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/dreams/restaurant-coral-keg.webp" alt="Restaurante Coral Keg en Dreams Cap Cana" />
+              <figcaption>Ambientes culinarios</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/dreams/resort-sunset.jpeg" alt="Atardecer en Dreams Cap Cana" />
+              <figcaption>Atardecer en la playa</figcaption>
             </figure>
           </div>
         </div>
@@ -1775,7 +1966,7 @@
 
       document.body.classList.add("can-animate");
       const revealTargets = document.querySelectorAll(
-        ".section-heading, .lead, .metric, .media-panel, .theme-card, .venue-list li, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
+        ".section-heading, .lead, .metric, .media-panel, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
       );
 
       revealTargets.forEach((target, index) => {
