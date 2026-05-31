@@ -583,6 +583,7 @@
       }
 
       .media-panel {
+        position: relative;
         overflow: hidden;
         border-radius: 8px;
         background: var(--navy);
@@ -607,6 +608,76 @@
 
       .media-panel:hover img {
         transform: scale(1.055);
+      }
+
+      .media-panel video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        background: var(--navy);
+        transition:
+          filter 260ms ease,
+          transform 520ms ease;
+      }
+
+      .media-panel:hover video {
+        filter: saturate(1.1) brightness(1.08);
+        transform: scale(1.035);
+      }
+
+      .video-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 2;
+        padding: 9px 13px;
+        border-radius: 999px;
+        color: var(--white);
+        background: rgba(7, 23, 47, 0.78);
+        box-shadow: 0 12px 28px rgba(7, 23, 47, 0.22);
+        font-size: 0.78rem;
+        font-weight: 950;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        backdrop-filter: blur(10px);
+        pointer-events: none;
+      }
+
+      .video-play-mark {
+        position: absolute;
+        inset: 50% auto auto 50%;
+        z-index: 2;
+        width: 74px;
+        height: 74px;
+        border: 1px solid rgba(255, 255, 255, 0.68);
+        border-radius: 50%;
+        background: rgba(245, 184, 59, 0.94);
+        box-shadow: 0 18px 44px rgba(7, 23, 47, 0.26);
+        transform: translate(-50%, -50%);
+        transition:
+          background 220ms ease,
+          transform 220ms ease;
+        pointer-events: none;
+      }
+
+      .video-play-mark::before {
+        position: absolute;
+        top: 50%;
+        left: 52%;
+        width: 0;
+        height: 0;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-left: 21px solid var(--navy);
+        content: "";
+        transform: translate(-40%, -50%);
+      }
+
+      .media-panel:hover .video-play-mark {
+        background: var(--cyan);
+        transform: translate(-50%, -50%) scale(1.08);
       }
 
       .dark-band {
@@ -670,6 +741,79 @@
         margin-bottom: 0;
         color: var(--cyan);
         font-size: 0.98rem;
+      }
+
+      .speakers {
+        background: linear-gradient(180deg, #ffffff 0%, #eef7ff 100%);
+      }
+
+      .speaker-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .speaker-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: 0 16px 40px rgba(10, 79, 152, 0.1);
+        transition:
+          border-color 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .speaker-card:hover {
+        border-color: rgba(33, 217, 221, 0.7);
+        box-shadow: 0 24px 52px rgba(10, 79, 152, 0.2);
+        transform: translateY(-8px);
+      }
+
+      .speaker-photo {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+        background: #dce8f3;
+      }
+
+      .speaker-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        transition: transform 520ms ease;
+      }
+
+      .speaker-card:hover img {
+        transform: scale(1.07);
+      }
+
+      .speaker-country {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        padding: 7px 9px;
+        border-radius: 6px;
+        color: var(--white);
+        background: rgba(7, 23, 47, 0.82);
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-align: center;
+        text-transform: uppercase;
+        backdrop-filter: blur(8px);
+      }
+
+      .speaker-card h3 {
+        min-height: 72px;
+        margin: 0;
+        padding: 16px 14px;
+        color: var(--navy);
+        font-size: 1.02rem;
+        line-height: 1.14;
       }
 
       .venue {
@@ -1305,6 +1449,10 @@
           grid-template-columns: 1fr;
         }
 
+        .speaker-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
         .image-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -1416,6 +1564,17 @@
           grid-template-columns: 1fr;
         }
 
+        .speaker-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .speaker-card h3 {
+          min-height: 64px;
+          padding: 13px 11px;
+          font-size: 0.92rem;
+        }
+
         .footer-inner {
           align-items: flex-start;
           flex-direction: column;
@@ -1460,6 +1619,18 @@
           "email": "info@cesinternacional.com",
           "url": "https://www.cesinternacional.com"
         },
+        "performer": [
+          { "@type": "Person", "name": "Nelson Liriano" },
+          { "@type": "Person", "name": "Ruth De los Santos" },
+          { "@type": "Person", "name": "Elianna Díaz" },
+          { "@type": "Person", "name": "Gustavo Coll" },
+          { "@type": "Person", "name": "Katia Morales" },
+          { "@type": "Person", "name": "Oscar Moratto" },
+          { "@type": "Person", "name": "Ramón Guzmán" },
+          { "@type": "Person", "name": "Robert Mustafá" },
+          { "@type": "Person", "name": "Gerineldo Sousa" },
+          { "@type": "Person", "name": "Juan José Acuña" }
+        ],
         "offers": {
           "@type": "AggregateOffer",
           "url": "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAY0EgtFUMUs2Wk84UkxFUUdSOFZTR081SU84SEpYTy4u",
@@ -1478,6 +1649,7 @@
           <img class="brand-logo" src="assets/corlafc-logo.png" alt="Logo CORLAFC" />
         </a>
         <div class="nav-links">
+          <a href="#conferencistas">Conferencistas</a>
           <a href="#ejes">Ejes</a>
           <a href="#sede">Sede</a>
           <a href="#inversion">Inversión</a>
@@ -1570,12 +1742,12 @@
                 <span>Días de congreso y networking</span>
               </div>
               <div class="metric">
-                <strong>7</strong>
-                <span>Ejes temáticos especializados</span>
+                <strong>10</strong>
+                <span>Especialistas invitados</span>
               </div>
               <div class="metric">
-                <strong>FIBA</strong>
-                <span>Créditos del programa</span>
+                <strong>9</strong>
+                <span>Bloques temáticos especializados</span>
               </div>
             </div>
           </div>
@@ -1588,20 +1760,105 @@
         </div>
       </section>
 
+      <section class="speakers" id="conferencistas" aria-labelledby="conferencistas-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Especialistas invitados</p>
+            <h2 id="conferencistas-title">Conferencistas CORLAFC 2026</h2>
+            <p>
+              Voces expertas de República Dominicana, Colombia, Panamá y Costa Rica
+              analizarán el nuevo mapa del crimen financiero en Latinoamérica.
+            </p>
+          </div>
+          <div class="speaker-grid">
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/nelson-liriano.jpg" alt="Nelson Liriano" />
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Nelson Liriano</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/ruth-de-los-santos.jpg" alt="Ruth De los Santos" />
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Ruth De los Santos</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/elianna-diaz.jpg" alt="Elianna Díaz" />
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Elianna Díaz</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/gustavo-coll.jpg" alt="Gustavo Coll" />
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Gustavo Coll</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/katia-morales.jpg" alt="Katia Morales" />
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Katia Morales</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/oscar-moratto.jpg" alt="Oscar Moratto" />
+                <span class="speaker-country">Colombia</span>
+              </div>
+              <h3>Oscar Moratto</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/ramon-guzman.jpg" alt="Ramón Guzmán" />
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Ramón Guzmán</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/robert-mustafa.jpg" alt="Robert Mustafá" />
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Robert Mustafá</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/gerineldo-sousa.jpg" alt="Gerineldo Sousa" />
+                <span class="speaker-country">Panamá</span>
+              </div>
+              <h3>Gerineldo Sousa</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo">
+                <img src="assets/speakers/juan-jose-acuna.jpg" alt="Juan José Acuña" />
+                <span class="speaker-country">Costa Rica</span>
+              </div>
+              <h3>Juan José Acuña</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="dark-band" id="ejes" aria-labelledby="ejes-title">
         <div class="section-inner">
           <div class="section-heading">
             <p class="eyebrow">Programa preliminar</p>
             <h2 id="ejes-title">Mapa del crimen financiero en LATAM 2026</h2>
             <p>
-              Los ejes temáticos abordan los nuevos patrones del delito financiero, la
-              tecnología aplicada al análisis y las responsabilidades del sector privado.
+              El crimen financiero ya no comete errores: los simula. El enemigo ya no es
+              visible, pero es más sofisticado que nunca.
             </p>
           </div>
           <div class="theme-grid">
             <article class="theme-card">
-              <h3>Crimen financiero 4.0</h3>
-              <p>La nueva arquitectura del delito.</p>
+              <h3>Crimen financiero sofisticado</h3>
+              <p>El crimen financiero ya no comete errores: los simula.</p>
               <p class="note">El enemigo ya no es visible, pero es más sofisticado que nunca.</p>
             </article>
             <article class="theme-card">
@@ -1633,6 +1890,16 @@
               <h3>Sector financiero y seguros</h3>
               <p>Nuevos riesgos, nuevas responsabilidades.</p>
               <p class="note">Los sectores que protegen también son objetivos.</p>
+            </article>
+            <article class="theme-card">
+              <h3>Lavado de activos y criminalidad convergente</h3>
+              <p>Narcotráfico, trata, defraudación tributaria y corrupción.</p>
+              <p class="note">Análisis de la sentencia SCJ-SR-23-00106 sobre el delito precedente.</p>
+            </article>
+            <article class="theme-card">
+              <h3>Inteligencia artificial agéntica</h3>
+              <p>El nuevo escenario en la gestión de compliance.</p>
+              <p class="note">Nuevos retos para anticipar, analizar y responder.</p>
             </article>
           </div>
         </div>
@@ -1672,7 +1939,19 @@
             </div>
           </div>
           <div class="media-panel">
-            <img src="assets/dreams/pool-main.jpeg" alt="Piscinas y áreas del Dreams Cap Cana Resort & Spa" />
+            <span class="video-badge">Video de la sede</span>
+            <span class="video-play-mark" aria-hidden="true"></span>
+            <video
+              src="assets/dreams/dreams-cap-cana-lifestyle.mp4"
+              poster="assets/dreams/pool-main.jpeg"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+              aria-label="Video de Dreams Cap Cana Resort & Spa, sede de CORLAFC 2026"
+            ></video>
           </div>
         </div>
       </section>
@@ -1744,8 +2023,8 @@
             </article>
           </div>
           <div class="save-banner" aria-label="Descuento por pago anticipado">
-            <strong>US$100 de ahorro</strong>
-            <span>Disponible al pagar antes del 30 de mayo de 2026.</span>
+            <strong>US$100 de ahorro anticipado</strong>
+            <span>Promoción publicada para pagos realizados hasta el 30 de mayo de 2026.</span>
           </div>
         </div>
       </section>
@@ -1894,6 +2173,28 @@
                 <span class="contact-arrow">Abrir</span>
               </a>
             </li>
+            <li>
+              <a
+                class="web"
+                href="https://www.cesinternacional.com"
+                target="_blank"
+                rel="noopener"
+                aria-label="Visitar www.cesinternacional.com"
+              >
+                <span class="contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.93 6h-3.18a15.9 15.9 0 0 0-1.2-3.13A8.04 8.04 0 0 1 18.93 8ZM12 4.04c.6.87 1.2 2.2 1.6 3.96h-3.2c.4-1.76 1-3.09 1.6-3.96ZM4.26 14a8.63 8.63 0 0 1 0-4h3.59a17.56 17.56 0 0 0 0 4H4.26Zm.81 2h3.18c.3 1.17.72 2.24 1.2 3.13A8.04 8.04 0 0 1 5.07 16Zm3.18-8H5.07a8.04 8.04 0 0 1 4.38-3.13A15.9 15.9 0 0 0 8.25 8ZM12 19.96c-.6-.87-1.2-2.2-1.6-3.96h3.2c-.4 1.76-1 3.09-1.6 3.96ZM14.03 14H9.97a15.6 15.6 0 0 1 0-4h4.06a15.6 15.6 0 0 1 0 4Zm.52 5.13c.48-.89.9-1.96 1.2-3.13h3.18a8.04 8.04 0 0 1-4.38 3.13ZM16.15 14a17.56 17.56 0 0 0 0-4h3.59a8.63 8.63 0 0 1 0 4h-3.59Z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-copy">
+                  <span class="contact-label">Web CESI</span>
+                  <strong class="contact-value">www.cesinternacional.com</strong>
+                </span>
+                <span class="contact-arrow">Abrir</span>
+              </a>
+            </li>
           </ul>
         </div>
       </section>
@@ -1966,7 +2267,7 @@
 
       document.body.classList.add("can-animate");
       const revealTargets = document.querySelectorAll(
-        ".section-heading, .lead, .metric, .media-panel, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
+        ".section-heading, .lead, .metric, .speaker-card, .media-panel, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
       );
 
       revealTargets.forEach((target, index) => {
