@@ -373,6 +373,7 @@
       .hero .eyebrow,
       .hero h1,
       .hero-subtitle,
+      .hero-promo,
       .hero-actions,
       .event-strip {
         animation: fadeUp 820ms ease both;
@@ -386,12 +387,16 @@
         animation-delay: 190ms;
       }
 
+      .hero-promo {
+        animation-delay: 260ms;
+      }
+
       .hero-actions {
-        animation-delay: 280ms;
+        animation-delay: 340ms;
       }
 
       .event-strip {
-        animation-delay: 370ms;
+        animation-delay: 430ms;
       }
 
       .eyebrow {
@@ -441,6 +446,41 @@
         color: rgba(255, 255, 255, 0.91);
         font-size: clamp(1.1rem, 2.1vw, 1.45rem);
         font-weight: 700;
+      }
+
+      .hero-promo {
+        display: grid;
+        max-width: 900px;
+        margin: 0 0 24px;
+        padding: 16px 18px;
+        border-left: 4px solid var(--gold);
+        border-radius: 6px;
+        background: rgba(7, 23, 47, 0.74);
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(12px);
+        transition:
+          background 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .hero-promo:hover {
+        background: rgba(7, 23, 47, 0.88);
+        box-shadow: 0 20px 42px rgba(245, 184, 59, 0.2);
+        transform: translateY(-4px);
+      }
+
+      .hero-promo strong {
+        color: var(--gold);
+        font-size: 1.08rem;
+        line-height: 1.2;
+      }
+
+      .hero-promo span {
+        margin-top: 4px;
+        color: rgba(255, 255, 255, 0.94);
+        font-weight: 800;
+        line-height: 1.45;
       }
 
       .hero-actions {
@@ -1697,6 +1737,13 @@
             Congreso Regional Contra Lavado de Activos, Fraude y Corrupción:
             “Mapa del crimen financiero en LATAM 2026”.
           </p>
+          <div class="hero-promo" aria-label="Promoción por registro anticipado">
+            <strong>Regístrate antes del 10 de junio</strong>
+            <span>
+              Recibe US$100 de descuento + cubrimos los US$150 de tu recertificación AML FIBA
+              + obtienes 10 créditos AML.
+            </span>
+          </div>
           <div class="hero-actions">
             <a
               class="button"
@@ -2022,9 +2069,12 @@
               <p>Opción disponible para acompañantes del participante.</p>
             </article>
           </div>
-          <div class="save-banner" aria-label="Descuento por pago anticipado">
-            <strong>US$100 de ahorro anticipado</strong>
-            <span>Promoción publicada para pagos realizados hasta el 30 de mayo de 2026.</span>
+          <div class="save-banner" aria-label="Beneficios por registro anticipado">
+            <strong>Regístrate antes del 10 de junio</strong>
+            <span>
+              Recibe US$100 de descuento + cubrimos los US$150 de tu recertificación AML FIBA
+              + obtienes 10 créditos AML.
+            </span>
           </div>
         </div>
       </section>
