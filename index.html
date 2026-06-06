@@ -676,6 +676,15 @@
         transform: scale(1.035);
       }
 
+      .featured-video-panel {
+        border: 1px solid rgba(245, 184, 59, 0.34);
+        box-shadow: 0 24px 68px rgba(7, 23, 47, 0.22);
+      }
+
+      .featured-video-panel:hover {
+        border-color: rgba(245, 184, 59, 0.72);
+      }
+
       .video-badge {
         position: absolute;
         top: 16px;
@@ -707,6 +716,7 @@
         transform: translate(-50%, -50%);
         transition:
           background 220ms ease,
+          opacity 220ms ease,
           transform 220ms ease;
         pointer-events: none;
       }
@@ -727,6 +737,11 @@
       .media-panel:hover .video-play-mark {
         background: var(--cyan);
         transform: translate(-50%, -50%) scale(1.08);
+      }
+
+      .media-panel.is-playing .video-play-mark {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.82);
       }
 
       .dark-band {
@@ -1761,6 +1776,7 @@
               rel="noopener"
               >Completar inscripción</a
             >
+            <a class="button secondary" href="#video-principal">Ver video</a>
             <a class="button secondary" href="#ejes">Ver programa</a>
           </div>
           <div class="event-strip" aria-label="Datos del evento">
@@ -1780,7 +1796,7 @@
         </div>
       </section>
 
-      <section aria-labelledby="resumen-title">
+      <section id="video-principal" aria-labelledby="resumen-title">
         <div class="section-inner intro-grid">
           <div>
             <div class="section-heading">
@@ -1807,11 +1823,17 @@
               </div>
             </div>
           </div>
-          <div class="media-panel">
-            <img
-              src="assets/dreams/resort-aerial-wide.jpeg"
-              alt="Vista aérea de Dreams Cap Cana Resort & Spa, sede de CORLAFC 2026"
-            />
+          <div class="media-panel featured-video-panel">
+            <span class="video-badge">Video principal</span>
+            <span class="video-play-mark" aria-hidden="true"></span>
+            <video
+              src="assets/videos/corlafc-video-principal.mp4"
+              poster="assets/videos/corlafc-video-principal-poster.jpg"
+              playsinline
+              controls
+              preload="metadata"
+              aria-label="Video principal de CORLAFC 2026"
+            ></video>
           </div>
         </div>
       </section>
@@ -2347,6 +2369,20 @@
       );
 
       revealTargets.forEach((target) => revealObserver.observe(target));
+
+      document.querySelectorAll(".media-panel video").forEach((video) => {
+        const panel = video.closest(".media-panel");
+        if (!panel) return;
+
+        const syncVideoState = () => {
+          panel.classList.toggle("is-playing", !video.paused && !video.ended);
+        };
+
+        video.addEventListener("play", syncVideoState);
+        video.addEventListener("pause", syncVideoState);
+        video.addEventListener("ended", syncVideoState);
+        syncVideoState();
+      });
     </script>
   </body>
 </html>
