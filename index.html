@@ -744,6 +744,45 @@
         transform: translate(-50%, -50%) scale(0.82);
       }
 
+      .video-feature {
+        color: var(--white);
+        background:
+          linear-gradient(180deg, rgba(7, 23, 47, 0.98), rgba(10, 79, 152, 0.92)),
+          url("assets/portada.jpg") center / cover no-repeat;
+      }
+
+      .video-feature .section-heading {
+        max-width: 900px;
+        margin-bottom: 28px;
+      }
+
+      .video-feature .section-heading h2,
+      .video-feature .section-heading p {
+        color: var(--white);
+      }
+
+      .video-feature .section-heading .eyebrow {
+        color: var(--gold);
+      }
+
+      .video-stage {
+        width: 100%;
+        border-color: rgba(245, 184, 59, 0.48);
+        border-radius: 10px;
+        box-shadow: 0 34px 92px rgba(0, 0, 0, 0.34);
+      }
+
+      .video-stage video {
+        height: auto;
+      }
+
+      .video-feature-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
       .dark-band {
         color: var(--white);
         background:
@@ -1584,6 +1623,7 @@
 
         .hero-actions,
         .contact-actions,
+        .video-feature-actions,
         .save-banner {
           align-items: stretch;
           flex-direction: column;
@@ -1796,7 +1836,42 @@
         </div>
       </section>
 
-      <section id="video-principal" aria-labelledby="resumen-title">
+      <section class="video-feature" id="video-principal" aria-labelledby="video-principal-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Video principal</p>
+            <h2 id="video-principal-title">CORLAFC 2026 en movimiento</h2>
+            <p>
+              Una pieza central para presentar la experiencia, la recertificación AML FIBA y los
+              beneficios del congreso antes de entrar al programa completo.
+            </p>
+          </div>
+          <div class="media-panel featured-video-panel video-stage">
+            <span class="video-badge">Video principal</span>
+            <span class="video-play-mark" aria-hidden="true"></span>
+            <video
+              src="assets/videos/corlafc-video-principal.mp4"
+              poster="assets/videos/corlafc-video-principal-poster.jpg"
+              playsinline
+              controls
+              preload="metadata"
+              aria-label="Video principal de CORLAFC 2026"
+            ></video>
+          </div>
+          <div class="video-feature-actions" aria-label="Acciones del video principal">
+            <a
+              class="button"
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAY0EgtFUMUs2Wk84UkxFUUdSOFZTR081SU84SEpYTy4u"
+              target="_blank"
+              rel="noopener"
+              >Completar inscripción</a
+            >
+            <a class="button secondary" href="#inversion">Ver inversión</a>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="resumen-title">
         <div class="section-inner intro-grid">
           <div>
             <div class="section-heading">
@@ -1823,17 +1898,11 @@
               </div>
             </div>
           </div>
-          <div class="media-panel featured-video-panel">
-            <span class="video-badge">Video principal</span>
-            <span class="video-play-mark" aria-hidden="true"></span>
-            <video
-              src="assets/videos/corlafc-video-principal.mp4"
-              poster="assets/videos/corlafc-video-principal-poster.jpg"
-              playsinline
-              controls
-              preload="metadata"
-              aria-label="Video principal de CORLAFC 2026"
-            ></video>
+          <div class="media-panel">
+            <img
+              src="assets/dreams/resort-aerial-wide.jpeg"
+              alt="Vista aérea de Dreams Cap Cana Resort & Spa, sede de CORLAFC 2026"
+            />
           </div>
         </div>
       </section>
@@ -2348,7 +2417,7 @@
 
       document.body.classList.add("can-animate");
       const revealTargets = document.querySelectorAll(
-        ".section-heading, .lead, .metric, .speaker-card, .media-panel, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
+        ".section-heading, .lead, .metric, .speaker-card, .media-panel, .video-feature-actions, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
       );
 
       revealTargets.forEach((target, index) => {
