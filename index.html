@@ -852,7 +852,7 @@
 
       .speaker-grid {
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 14px;
       }
 
@@ -889,6 +889,22 @@
         transition: transform 520ms ease;
       }
 
+      .speaker-photo.placeholder {
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 28% 24%, rgba(33, 217, 221, 0.34), transparent 32%),
+          linear-gradient(135deg, #07172f, #0a4f98 58%, #f5b83b);
+      }
+
+      .speaker-initials {
+        color: var(--white);
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 950;
+        letter-spacing: 0.02em;
+        text-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+      }
+
       .speaker-card:hover img {
         transform: scale(1.07);
       }
@@ -917,6 +933,104 @@
         color: var(--navy);
         font-size: 1.02rem;
         line-height: 1.14;
+      }
+
+      .speaker-profiles {
+        margin-top: 42px;
+      }
+
+      .speaker-profiles .section-heading {
+        max-width: 850px;
+      }
+
+      .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .profile-card {
+        position: relative;
+        overflow: hidden;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.86);
+        box-shadow: 0 18px 46px rgba(10, 79, 152, 0.1);
+        transition:
+          border-color 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .profile-card::before {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        content: "";
+        background: linear-gradient(180deg, var(--gold), var(--cyan));
+      }
+
+      .profile-card:hover {
+        border-color: rgba(10, 79, 152, 0.24);
+        box-shadow: 0 24px 58px rgba(10, 79, 152, 0.16);
+        transform: translateY(-6px);
+      }
+
+      .profile-top {
+        display: grid;
+        grid-template-columns: 76px 1fr;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .profile-avatar {
+        display: grid;
+        width: 76px;
+        height: 76px;
+        place-items: center;
+        overflow: hidden;
+        border: 2px solid rgba(245, 184, 59, 0.72);
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--navy), var(--blue));
+        color: var(--white);
+        font-weight: 950;
+      }
+
+      .profile-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .profile-meta h3 {
+        margin-bottom: 6px;
+        color: var(--navy);
+        font-size: 1.2rem;
+        line-height: 1.1;
+      }
+
+      .profile-role {
+        margin: 0 0 8px;
+        color: #263d5f;
+        font-weight: 900;
+        line-height: 1.35;
+      }
+
+      .profile-country {
+        color: var(--orange);
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .profile-card > p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.98rem;
+        font-weight: 650;
+        line-height: 1.68;
       }
 
       .venue {
@@ -1556,6 +1670,10 @@
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
+        .profile-grid {
+          grid-template-columns: 1fr;
+        }
+
         .image-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -1679,6 +1797,20 @@
           font-size: 0.92rem;
         }
 
+        .profile-card {
+          padding: 20px;
+        }
+
+        .profile-top {
+          grid-template-columns: 64px 1fr;
+          gap: 12px;
+        }
+
+        .profile-avatar {
+          width: 64px;
+          height: 64px;
+        }
+
         .footer-inner {
           align-items: flex-start;
           flex-direction: column;
@@ -1724,16 +1856,18 @@
           "url": "https://www.cesinternacional.com"
         },
         "performer": [
-          { "@type": "Person", "name": "Ruth De los Santos" },
-          { "@type": "Person", "name": "Elianna Díaz" },
           { "@type": "Person", "name": "Iliana Meléndez" },
-          { "@type": "Person", "name": "Gustavo Coll" },
           { "@type": "Person", "name": "Katia Morales" },
-          { "@type": "Person", "name": "Oscar Moratto" },
           { "@type": "Person", "name": "Ramón Guzmán" },
+          { "@type": "Person", "name": "Eliana Díaz" },
+          { "@type": "Person", "name": "Gustavo A. de los Santos Coll" },
+          { "@type": "Person", "name": "Ruth De los Santos" },
           { "@type": "Person", "name": "Robert Mustafá" },
-          { "@type": "Person", "name": "Gerineldo Sousa" },
-          { "@type": "Person", "name": "Juan José Acuña" }
+          { "@type": "Person", "name": "Carla Peña" },
+          { "@type": "Person", "name": "Carlos Leonardo" },
+          { "@type": "Person", "name": "Juan José Acuña" },
+          { "@type": "Person", "name": "Oscar Moratto" },
+          { "@type": "Person", "name": "Gerineldo Sousa" }
         ],
         "offers": {
           "@type": "AggregateOffer",
@@ -1889,7 +2023,7 @@
                 <span>Días de congreso y networking</span>
               </div>
               <div class="metric">
-                <strong>10</strong>
+                <strong>12</strong>
                 <span>Especialistas invitados</span>
               </div>
               <div class="metric">
@@ -1927,10 +2061,10 @@
             </article>
             <article class="speaker-card">
               <div class="speaker-photo">
-                <img src="assets/speakers/elianna-diaz.jpg" alt="Elianna Díaz" />
+                <img src="assets/speakers/elianna-diaz.jpg" alt="Eliana Díaz" />
                 <span class="speaker-country">República Dominicana</span>
               </div>
-              <h3>Elianna Díaz</h3>
+              <h3>Eliana Díaz</h3>
             </article>
             <article class="speaker-card">
               <div class="speaker-photo">
@@ -1941,10 +2075,10 @@
             </article>
             <article class="speaker-card">
               <div class="speaker-photo">
-                <img src="assets/speakers/gustavo-coll.jpg" alt="Gustavo Coll" />
+                <img src="assets/speakers/gustavo-coll.jpg" alt="Gustavo A. de los Santos Coll" />
                 <span class="speaker-country">República Dominicana</span>
               </div>
-              <h3>Gustavo Coll</h3>
+              <h3>Gustavo A. de los Santos Coll</h3>
             </article>
             <article class="speaker-card">
               <div class="speaker-photo">
@@ -1975,6 +2109,20 @@
               <h3>Robert Mustafá</h3>
             </article>
             <article class="speaker-card">
+              <div class="speaker-photo placeholder">
+                <span class="speaker-initials">CP</span>
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Carla Peña</h3>
+            </article>
+            <article class="speaker-card">
+              <div class="speaker-photo placeholder">
+                <span class="speaker-initials">CL</span>
+                <span class="speaker-country">República Dominicana</span>
+              </div>
+              <h3>Carlos Leonardo</h3>
+            </article>
+            <article class="speaker-card">
               <div class="speaker-photo">
                 <img src="assets/speakers/gerineldo-sousa.jpg" alt="Gerineldo Sousa" />
                 <span class="speaker-country">Panamá</span>
@@ -1988,6 +2136,221 @@
               </div>
               <h3>Juan José Acuña</h3>
             </article>
+          </div>
+          <div class="speaker-profiles" aria-labelledby="perfiles-title">
+            <div class="section-heading">
+              <p class="eyebrow">Perfiles ejecutivos</p>
+              <h2 id="perfiles-title">Trayectorias que elevan la conversación</h2>
+              <p>
+                Un cuerpo de expositores con experiencia en cumplimiento, seguros,
+                ciberseguridad, auditoría, gestión pública, justicia y prevención de delitos
+                financieros.
+              </p>
+            </div>
+            <div class="profile-grid">
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/iliana-melendez.jpg" alt="Iliana Meléndez" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Iliana Meléndez</h3>
+                    <p class="profile-role">CEO Prospensa, consultora antilavado</p>
+                    <span class="profile-country">Venezuela</span>
+                  </div>
+                </div>
+                <p>
+                  Abogada, consultora y conferencista con más de 18 años de experiencia en
+                  derecho administrativo, gestión pública, presupuesto público y prevención de
+                  lavado de activos, financiamiento del terrorismo y destrucción de armas masivas
+                  en instituciones públicas y privadas de Venezuela y República Dominicana.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/katia-morales.jpg" alt="Katia Morales" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Katia Morales</h3>
+                    <p class="profile-role">Directora de Cumplimiento y Riesgos IDECOOP</p>
+                    <span class="profile-country">República Dominicana</span>
+                  </div>
+                </div>
+                <p>
+                  Abogada especialista en PLAFT con más de 27 años de experiencia en el sector
+                  financiero y en regulaciones aplicables a cooperativas, entidades financieras,
+                  mercado de valores, seguros, fiduciarias y otros sujetos obligados.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/ramon-guzman.jpg" alt="Ramón Guzmán" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Ramón Guzmán</h3>
+                    <p class="profile-role">Estratega en gestión de riesgo y compliance</p>
+                    <span class="profile-country">República Dominicana</span>
+                  </div>
+                </div>
+                <p>
+                  Ingeniero de sistemas con más de 20 años de experiencia en el sector público y
+                  privado financiero, con funciones gerenciales en PLAFT, cumplimiento, riesgo
+                  operacional, cumplimiento fiscal extranjero, inteligencia financiera, monitoreo y
+                  desarrollo de sistemas.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/elianna-diaz.jpg" alt="Eliana Díaz" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Eliana Díaz</h3>
+                    <p class="profile-role">Directora de Supervisión y Control de la Superintendencia de Seguros</p>
+                    <span class="profile-country">República Dominicana</span>
+                  </div>
+                </div>
+                <p>
+                  Economista con énfasis en finanzas y más de 22 años de experiencia en sectores
+                  público y privado de Colombia y República Dominicana. Acumula más de 12 años en
+                  seguros, con visión de sujeto obligado y regulador, además de certificación FIBA AML.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/gustavo-coll.jpg" alt="Gustavo A. de los Santos Coll" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Gustavo A. de los Santos Coll</h3>
+                    <p class="profile-role">Abogado litigante, decano FCJP-UCSD y ex Fiscal del D. N.</p>
+                    <span class="profile-country">República Dominicana</span>
+                  </div>
+                </div>
+                <p>
+                  Abogado litigante y consultor con más de 23 años de carrera profesional, decano
+                  de la Facultad de Ciencias Jurídicas y Políticas de la Universidad Católica Santo
+                  Domingo, ex fiscal del Distrito Nacional y socio senior de C, C & R Gabinete Legal.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/ruth-de-los-santos.jpg" alt="Ruth de los Santos" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Ruth de los Santos</h3>
+                    <p class="profile-role">Directora de Regulaciones en el CONEP</p>
+                    <span class="profile-country">República Dominicana</span>
+                  </div>
+                </div>
+                <p>
+                  Abogada especializada en política fiscal, derecho económico y cumplimiento, con
+                  más de 20 años de experiencia en el sector público, donde ha ocupado posiciones
+                  ejecutivas vinculadas a política, legislación fiscal y regulación.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/robert-mustafa.jpg" alt="Robert Mustafá" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Robert Mustafá</h3>
+                    <p class="profile-role">Encargado de Prevención de Lavado de Activos y Financiamiento del Terrorismo</p>
+                    <span class="profile-country">República Dominicana</span>
+                  </div>
+                </div>
+                <p>
+                  Abogado con más de 13 años de experiencia continua en la función pública,
+                  especializado en cumplimiento regulatorio, supervisión de riesgos, prevención de
+                  lavado de activos y financiamiento del terrorismo.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">CP</span>
+                  <div class="profile-meta">
+                    <h3>Carla Peña</h3>
+                    <p class="profile-role">Asesora de la Dirección General / Directora de Gabinete, UAF</p>
+                    <span class="profile-country">República Dominicana</span>
+                  </div>
+                </div>
+                <p>
+                  Abogada y asesora estratégica con más de 10 años de experiencia en gobernanza
+                  AML/CFT, coordinación interinstitucional, asesoría jurídica, operaciones legales
+                  y soporte ejecutivo de alta dirección.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">CL</span>
+                  <div class="profile-meta">
+                    <h3>Carlos Leonardo</h3>
+                    <p class="profile-role">Director Ejecutivo en el Centro Nacional de Ciberseguridad</p>
+                    <span class="profile-country">República Dominicana</span>
+                  </div>
+                </div>
+                <p>
+                  Ingeniero de sistemas con más de 17 años de experiencia profesional en
+                  ciberseguridad. Ha contribuido al fortalecimiento del ecosistema dominicano de
+                  ciberseguridad y a marcos legislativos, regulatorios y de delitos cibernéticos.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/juan-jose-acuna.jpg" alt="Juan José Acuña" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Juan José Acuña</h3>
+                    <p class="profile-role">Representante de la Comisión de la Contraloría General de Servicios del Poder Judicial</p>
+                    <span class="profile-country">Costa Rica</span>
+                  </div>
+                </div>
+                <p>
+                  Abogado y notario público con más de 15 años de experiencia como consultor legal
+                  especializado en derecho notarial y registral, derecho privado, comercial y penal.
+                  También cuenta con más de 12 años de experiencia docente.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/oscar-moratto.jpg" alt="Oscar Moratto" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Oscar Moratto</h3>
+                    <p class="profile-role">Advisor Training</p>
+                    <span class="profile-country">Colombia</span>
+                  </div>
+                </div>
+                <p>
+                  Ingeniero civil con formación avanzada en finanzas y experiencia en AML/ATF,
+                  business intelligence, gestión de proyectos, presupuestos y recursos. Domina
+                  técnicas de inteligencia artificial, análisis multicriterio, AHP y CBR.
+                </p>
+              </article>
+              <article class="profile-card">
+                <div class="profile-top">
+                  <span class="profile-avatar">
+                    <img src="assets/speakers/gerineldo-sousa.jpg" alt="Gerineldo Sousa" />
+                  </span>
+                  <div class="profile-meta">
+                    <h3>Gerineldo Sousa</h3>
+                    <p class="profile-role">Auditor forense</p>
+                    <span class="profile-country">Panamá</span>
+                  </div>
+                </div>
+                <p>
+                  Experto auditor interno y forense, con amplia trayectoria en el sistema
+                  financiero dominicano y más de 31 años como vicepresidente contralor del Banco
+                  Popular Dominicano. Es además escritor de libros de auditoría forense.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -2422,7 +2785,7 @@
 
       document.body.classList.add("can-animate");
       const revealTargets = document.querySelectorAll(
-        ".section-heading, .lead, .metric, .speaker-card, .media-panel, .video-feature-actions, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
+        ".section-heading, .lead, .metric, .speaker-card, .profile-card, .media-panel, .video-feature-actions, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
       );
 
       revealTargets.forEach((target, index) => {
