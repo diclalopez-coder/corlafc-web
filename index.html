@@ -1033,6 +1033,295 @@
         line-height: 1.68;
       }
 
+      .agenda-section {
+        position: relative;
+        overflow: hidden;
+        color: var(--white);
+        background:
+          radial-gradient(circle at 12% 18%, rgba(33, 217, 221, 0.2), transparent 34%),
+          radial-gradient(circle at 84% 12%, rgba(245, 184, 59, 0.18), transparent 30%),
+          linear-gradient(135deg, #07172f 0%, #09264a 48%, #050b18 100%);
+      }
+
+      .agenda-section::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(7, 23, 47, 0.88), rgba(7, 23, 47, 0.46)),
+          url("assets/ejes.jpg") center / cover no-repeat;
+        opacity: 0.16;
+      }
+
+      .agenda-section::after {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 54px 54px;
+        mask-image: radial-gradient(circle at 56% 30%, black, transparent 70%);
+      }
+
+      .agenda-section .section-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .agenda-section .section-heading h2,
+      .agenda-section .section-heading p {
+        color: var(--white);
+      }
+
+      .agenda-section .section-heading .eyebrow {
+        color: var(--gold);
+      }
+
+      .agenda-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+        gap: 30px;
+        align-items: end;
+        margin-bottom: 30px;
+      }
+
+      .agenda-kpis {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .agenda-kpi {
+        min-height: 120px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+        backdrop-filter: blur(14px);
+        transition:
+          border-color 220ms ease,
+          background 220ms ease,
+          transform 220ms ease;
+      }
+
+      .agenda-kpi:hover {
+        border-color: rgba(33, 217, 221, 0.58);
+        background: rgba(255, 255, 255, 0.13);
+        transform: translateY(-6px);
+      }
+
+      .agenda-kpi strong {
+        display: block;
+        color: var(--gold);
+        font-size: 2.05rem;
+        line-height: 1;
+        font-weight: 950;
+      }
+
+      .agenda-kpi span {
+        display: block;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 0.82rem;
+        font-weight: 850;
+        line-height: 1.35;
+      }
+
+      .agenda-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .agenda-showcase {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .agenda-days {
+        display: grid;
+        gap: 18px;
+      }
+
+      .agenda-day {
+        position: relative;
+        overflow: hidden;
+        padding: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(16px);
+      }
+
+      .agenda-day::before {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 5px;
+        content: "";
+        background: linear-gradient(180deg, var(--gold), var(--orange), var(--cyan));
+      }
+
+      .agenda-day-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .agenda-day-header h3 {
+        margin: 0;
+        color: var(--white);
+        font-size: clamp(1.35rem, 2.8vw, 2.3rem);
+        line-height: 1;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .agenda-day-header span {
+        display: inline-flex;
+        min-width: 82px;
+        min-height: 38px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--orange), var(--gold));
+        color: var(--navy);
+        font-size: 0.82rem;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .agenda-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .agenda-item {
+        display: grid;
+        grid-template-columns: 108px 1fr;
+        gap: 14px;
+        align-items: start;
+        padding: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 8px;
+        background: rgba(5, 11, 24, 0.5);
+        transition:
+          border-color 220ms ease,
+          background 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .agenda-item:hover {
+        border-color: rgba(245, 184, 59, 0.52);
+        background: rgba(10, 79, 152, 0.32);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+        transform: translateY(-4px);
+      }
+
+      .agenda-time {
+        display: inline-flex;
+        min-height: 34px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(33, 217, 221, 0.34);
+        border-radius: 999px;
+        color: var(--cyan);
+        font-size: 0.86rem;
+        font-weight: 950;
+        white-space: nowrap;
+      }
+
+      .agenda-item h4 {
+        margin: 0;
+        color: var(--white);
+        font-size: 1rem;
+        line-height: 1.35;
+        font-weight: 900;
+      }
+
+      .agenda-speaker {
+        margin: 8px 0 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.92rem;
+        font-weight: 800;
+      }
+
+      .agenda-item.is-featured {
+        border-color: rgba(245, 184, 59, 0.52);
+        background: linear-gradient(135deg, rgba(245, 184, 59, 0.16), rgba(33, 217, 221, 0.08));
+      }
+
+      .agenda-item.is-break h4,
+      .agenda-item.is-close h4 {
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+
+      .agenda-preview {
+        display: grid;
+        gap: 18px;
+        align-self: start;
+      }
+
+      .agenda-preview-card {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 26px 68px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(16px);
+        transition:
+          border-color 220ms ease,
+          box-shadow 220ms ease,
+          transform 220ms ease;
+      }
+
+      .agenda-preview-card:hover {
+        border-color: rgba(33, 217, 221, 0.62);
+        box-shadow: 0 30px 78px rgba(33, 217, 221, 0.14);
+        transform: translateY(-6px);
+      }
+
+      .agenda-preview-media {
+        max-height: 680px;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        background: var(--white);
+      }
+
+      .agenda-preview-media img {
+        width: 100%;
+        height: auto;
+      }
+
+      .agenda-preview-copy {
+        padding: 20px;
+      }
+
+      .agenda-preview-copy h3 {
+        margin: 0 0 8px;
+        color: var(--white);
+        font-size: 1.15rem;
+      }
+
+      .agenda-preview-copy p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.76);
+        font-weight: 750;
+      }
+
       .venue {
         background: var(--white);
       }
@@ -1636,6 +1925,8 @@
 
         .event-strip,
         .intro-grid,
+        .agenda-hero,
+        .agenda-showcase,
         .venue-layout,
         .contact-layout,
         .contact-list {
@@ -1660,6 +1951,11 @@
         .venue-stat-grid,
         .luxury-grid {
           grid-template-columns: 1fr;
+        }
+
+        .agenda-preview {
+          position: relative;
+          top: auto;
         }
 
         .theme-grid {
@@ -1742,6 +2038,7 @@
         .hero-actions,
         .contact-actions,
         .video-feature-actions,
+        .agenda-actions,
         .save-banner {
           align-items: stretch;
           flex-direction: column;
@@ -1752,9 +2049,30 @@
         }
 
         .metric,
+        .agenda-day,
         .theme-card,
         .price-card {
           padding: 20px;
+        }
+
+        .agenda-kpis {
+          grid-template-columns: 1fr;
+        }
+
+        .agenda-day-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .agenda-item {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding: 14px;
+        }
+
+        .agenda-time {
+          width: max-content;
+          padding: 0 14px;
         }
 
         .contact-list a {
@@ -1888,6 +2206,7 @@
         </a>
         <div class="nav-links">
           <a href="#conferencistas">Conferencistas</a>
+          <a href="#agenda">Agenda</a>
           <a href="#ejes">Ejes</a>
           <a href="#sede">Sede</a>
           <a href="#inversion">Inversión</a>
@@ -1951,7 +2270,7 @@
               >Completar inscripción</a
             >
             <a class="button secondary" href="#video-principal">Ver video</a>
-            <a class="button secondary" href="#ejes">Ver programa</a>
+            <a class="button secondary" href="#agenda">Ver agenda</a>
           </div>
           <div class="event-strip" aria-label="Datos del evento">
             <div class="event-fact">
@@ -2351,6 +2670,291 @@
                 </p>
               </article>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="agenda-section" id="agenda" aria-labelledby="agenda-title">
+        <div class="section-inner">
+          <div class="agenda-hero">
+            <div class="section-heading">
+              <p class="eyebrow">Agenda oficial</p>
+              <h2 id="agenda-title">Programa visual CORLAFC 2026</h2>
+              <p>
+                Tres jornadas con apertura institucional, paneles técnicos, networking,
+                certificación y cierre ejecutivo en Dreams Cap Cana Resort & Spa.
+              </p>
+              <div class="agenda-actions" aria-label="Acciones de la agenda">
+                <a class="button" href="assets/agenda/agenda-corlafc-2026.pdf" target="_blank" rel="noopener">
+                  Ver agenda oficial
+                </a>
+                <a
+                  class="button secondary"
+                  href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAY0EgtFUMUs2Wk84UkxFUUdSOFZTR081SU84SEpYTy4u"
+                  target="_blank"
+                  rel="noopener"
+                  >Completar inscripción</a
+                >
+              </div>
+            </div>
+            <div class="agenda-kpis" aria-label="Resumen de la agenda CORLAFC 2026">
+              <div class="agenda-kpi">
+                <strong>25</strong>
+                <span>Apertura, panel inicial y cóctel de bienvenida.</span>
+              </div>
+              <div class="agenda-kpi">
+                <strong>26</strong>
+                <span>Jornada técnica de crimen financiero, IA, fraude y ciberseguridad.</span>
+              </div>
+              <div class="agenda-kpi">
+                <strong>27</strong>
+                <span>Cierre académico, certificados y cena privada con expositores.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="agenda-showcase">
+            <div class="agenda-days">
+              <article class="agenda-day">
+                <div class="agenda-day-header">
+                  <h3>Jueves 25 de junio</h3>
+                  <span>Apertura</span>
+                </div>
+                <ul class="agenda-list">
+                  <li class="agenda-item is-featured">
+                    <span class="agenda-time">07:00 pm</span>
+                    <div>
+                      <h4>Ceremonia de apertura y bienvenida</h4>
+                    </div>
+                  </li>
+                  <li class="agenda-item is-featured">
+                    <span class="agenda-time">07:15 pm</span>
+                    <div>
+                      <h4>Panel de apertura: Mapa del Crimen Organizado de Cara al 2027</h4>
+                    </div>
+                  </li>
+                  <li class="agenda-item is-break">
+                    <span class="agenda-time">08:00 pm</span>
+                    <div>
+                      <h4>Cóctel de bienvenida</h4>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+
+              <article class="agenda-day">
+                <div class="agenda-day-header">
+                  <h3>Viernes 26 de junio</h3>
+                  <span>Jornada central</span>
+                </div>
+                <ul class="agenda-list">
+                  <li class="agenda-item is-featured">
+                    <span class="agenda-time">08:30 am</span>
+                    <div>
+                      <h4>
+                        De la Norma a la Efectividad: Articulación Estratégica, Inteligencia
+                        Financiera y Liderazgo Nacional en la Prevención del Lavado de Activos
+                      </h4>
+                      <p class="agenda-speaker">Lic. Carla Patricia Peña, República Dominicana</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">09:15 am</span>
+                    <div>
+                      <h4>
+                        Criptoactivos y Economía Oculta, DeFi, Mixers y Anonimización. El dinero
+                        ya no necesita bancos para esconderse
+                      </h4>
+                      <p class="agenda-speaker">Lic. Iliana Meléndez, Venezuela</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item is-break">
+                    <span class="agenda-time">10:15 am</span>
+                    <div>
+                      <h4>Coffee break e intercambio profesional</h4>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">10:30 am</span>
+                    <div>
+                      <h4>
+                        Fraude, Corrupción y Soborno Sistémico. El Riesgo Interno en la
+                        Organización. El Mayor Riesgo Sigue Estando Dentro
+                      </h4>
+                      <p class="agenda-speaker">Gerineldo Sousa, Panamá</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">11:15 am</span>
+                    <div>
+                      <h4>
+                        Gestión de Riesgos 5.0 en Cooperativas: Inteligencia Artificial,
+                        Ciberfraude y Resiliencia en un Mundo de Amenazas Emergentes
+                      </h4>
+                      <p class="agenda-speaker">Lic. Katia Morales, República Dominicana</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">12:00 pm</span>
+                    <div>
+                      <h4>
+                        Crimen Financiero Sofisticado: El Crimen Financiero ya no Comete Errores:
+                        Los Simula
+                      </h4>
+                      <p class="agenda-speaker">Msc. Juan José Acuña Leandro, Costa Rica</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item is-break">
+                    <span class="agenda-time">01:00 pm</span>
+                    <div>
+                      <h4>Almuerzo</h4>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">02:00 pm</span>
+                    <div>
+                      <h4>
+                        Inteligencia Artificial: Del Análisis a la Acción. ¿La tecnología apoya?
+                        ¿Decide?
+                      </h4>
+                      <p class="agenda-speaker">Lic. Ramón Guzmán, República Dominicana</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">03:00 pm</span>
+                    <div>
+                      <h4>Inteligencia Artificial Agéntica Aplicada al Compliance</h4>
+                      <p class="agenda-speaker">Ing. Oscar Moratto, Colombia</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item is-break">
+                    <span class="agenda-time">03:45 pm</span>
+                    <div>
+                      <h4>Coffee break y receso</h4>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">04:00 pm</span>
+                    <div>
+                      <h4>
+                        Cibercrimen y Lavado Digital. La Nueva Frontera. El crimen ya es 100%
+                        digital y global
+                      </h4>
+                      <p class="agenda-speaker">Ing. Armando Díaz, República Dominicana</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">05:00 pm</span>
+                    <div>
+                      <h4>
+                        Ciberseguridad Resiliente: En Pro de un Entorno Digital Más Seguro y
+                        Robusto
+                      </h4>
+                      <p class="agenda-speaker">Ing. Carlos Leonardo, República Dominicana</p>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="agenda-preview" aria-label="Agenda de cierre y documento oficial">
+              <article class="agenda-day">
+                <div class="agenda-day-header">
+                  <h3>Sábado 27 de junio</h3>
+                  <span>Cierre</span>
+                </div>
+                <ul class="agenda-list">
+                  <li class="agenda-item is-featured">
+                    <span class="agenda-time">08:30 am</span>
+                    <div>
+                      <h4>
+                        Debida Diligencia Basada en Riesgo: del Cumplimiento Formal a la Gestión
+                        Efectiva del Riesgo ALA/CFT
+                      </h4>
+                      <p class="agenda-speaker">Lic. Robert Mustafá, República Dominicana</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">09:30 am</span>
+                    <div>
+                      <h4>
+                        Transparencia y Trazabilidad en las Operaciones de Seguros: Clave en la
+                        Prevención del Fraude y la Corrupción
+                      </h4>
+                      <p class="agenda-speaker">Lic. Rafiel Vasquez, República Dominicana</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">10:15 am</span>
+                    <div>
+                      <h4>
+                        Sector Financiero y Seguros: Nuevos Riesgos, Nuevas Responsabilidades. Los
+                        Sectores que Protegen También son Objetivos
+                      </h4>
+                      <p class="agenda-speaker">Lic. Eliana Díaz, República Dominicana</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item is-break">
+                    <span class="agenda-time">11:00 am</span>
+                    <div>
+                      <h4>Coffee break y foto de grupo CORLAFC</h4>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">11:15 am</span>
+                    <div>
+                      <h4>
+                        Compliance 2026: El Fin del Modelo Tradicional. Cumplir ya no es
+                        suficiente, hay que anticiparse
+                      </h4>
+                      <p class="agenda-speaker">Lic. Ruth De Los Santos, República Dominicana</p>
+                    </div>
+                  </li>
+                  <li class="agenda-item">
+                    <span class="agenda-time">12:30 pm</span>
+                    <div>
+                      <h4>
+                        Prevención Penal Corporativa: Del Cumplimiento Formal a la Defensa
+                        Anticipada de la Empresa. Análisis de la Sentencia
+                      </h4>
+                      <p class="agenda-speaker">
+                        Lic. Gustavo De Los Santos Coll, República Dominicana
+                      </p>
+                    </div>
+                  </li>
+                  <li class="agenda-item is-close">
+                    <span class="agenda-time">01:30 pm</span>
+                    <div>
+                      <h4>Clausura y entrega de certificados</h4>
+                    </div>
+                  </li>
+                  <li class="agenda-item is-close">
+                    <span class="agenda-time">08:00 pm</span>
+                    <div>
+                      <h4>Cena privada con expositores</h4>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+              <div class="agenda-preview-card">
+                <a href="assets/agenda/agenda-corlafc-2026.pdf" target="_blank" rel="noopener">
+                  <div class="agenda-preview-media">
+                    <img
+                      src="assets/agenda/agenda-corlafc-2026.webp"
+                      alt="Agenda oficial CORLAFC 2026"
+                      loading="lazy"
+                    />
+                  </div>
+                </a>
+                <div class="agenda-preview-copy">
+                  <h3>Documento oficial</h3>
+                  <p>
+                    Imagen completa de la agenda original para compartir, revisar o descargar
+                    junto al programa navegable.
+                  </p>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -2785,7 +3389,7 @@
 
       document.body.classList.add("can-animate");
       const revealTargets = document.querySelectorAll(
-        ".section-heading, .lead, .metric, .speaker-card, .profile-card, .media-panel, .video-feature-actions, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
+        ".section-heading, .lead, .metric, .speaker-card, .profile-card, .media-panel, .video-feature-actions, .agenda-kpi, .agenda-actions, .agenda-day, .agenda-preview-card, .theme-card, .dreams-logo-card, .venue-list li, .venue-stat, .luxury-card, .price-card, .save-banner, .image-grid figure, .contact-actions, .contact-list li"
       );
 
       revealTargets.forEach((target, index) => {
