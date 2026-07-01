@@ -457,6 +457,13 @@
         margin-bottom: 24px;
       }
 
+      .vault-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 14px;
+      }
+
       .status-pill {
         display: inline-flex;
         min-height: 38px;
@@ -638,6 +645,11 @@
           flex-direction: column;
         }
 
+        .vault-actions {
+          width: 100%;
+          align-items: stretch;
+        }
+
         .button,
         .logout-button,
         .file-button {
@@ -746,7 +758,7 @@
                   activando conforme queden autorizados para descarga.
                 </p>
               </div>
-              <div>
+              <div class="vault-actions">
                 <span class="status-pill">Sesión activa</span>
                 <button class="logout-button" type="button" id="logout-button">Cerrar sesión</button>
               </div>
